@@ -1,0 +1,116 @@
+html {
+	height: 100%;
+	width:	100%;
+	/*font-family: Georgia, Helvetica, sans-serif;*/
+	font-family: Phyllis, 'Lucida Handwriting',cursive;
+}
+
+body {
+	width: 910px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	width:	910px;
+	
+}
+
+table {
+	width: 100%;
+}
+
+td.table-body {
+	width: 625px;
+}
+
+td.table-extra {
+	width: 285px;
+	padding-left: 35px;
+	padding-top: 40px;
+}
+
+span.blurb{
+	font-size: 20px;
+}
+
+a, a:visited, a:hover{
+	text-decoration: none;
+}
+
+span.title-box {
+	position: relative;
+	font-family: Phyllis,'Easy Street EPS',cursive;
+	font-size: 6.5em;
+	background-color: #eeece1;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border: #fff 6px solid;
+	box-shadow: 2px 2px 2px 2px #ccc;
+	-moz-box-shadow: 2px 2px 2px 2px #ccc;
+	top: 50px;
+	left: 30px;
+}
+
+span.title, span.box-header, li a{
+	color:  #524735;
+	text-shadow: 3px 3px 5px #f1e9d2, 1px 1px 3px #ccc;
+}
+
+span.box-header{
+	font-size: 0.5cm;
+	line-height: 35px;
+	background-color: #828282;
+	padding: 4px 4px 4px 4px;
+	width: 364px;
+}
+
+div.bg-image{
+	position: absolute;
+	background: #fff url('../images/mumma.png') top center no-repeat;
+	opacity: 0.3;
+	z-index: -1;
+	width: 616px;
+	height: 1160px;
+}
+
+div.top-nav {
+	position: relative;
+	top: 130px;
+}
+
+div.top-nav ul li{
+	position: relative;
+	display: inline-block;
+	list-style-type: none;
+	padding-right: 1.5em;
+	word-wrap: auto;
+}
+
+.top-nav li a {
+	border: solid 2px #ccc;
+	padding: 15px;
+	font-size: 20px;
+}
+
+div.footer{
+	position: relative;
+	border-top: 5px solid #9bbb59;
+	width: 520px;
+	left: 95px;
+	top: 130px;
+}
+
+div.footer span {
+	color: #8c8c8c;
+	font-size: 20px;
+	padding: 5px;
+	
+}
+
+.round {
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+/* bottom line colour: #9bbb59*/

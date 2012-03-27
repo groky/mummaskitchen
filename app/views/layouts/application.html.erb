@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> <%= title %> </title>
+  <%= stylesheet_link_tag 'styles' %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	
+	<div class="header">
+		
+		<div class="bg-image"></div>
+		<span class="title-box">Mumma's &nbsp;Kitchen</span>
+
+		<%= render 'layouts/header' %>
+	</div>
+	<div class="body">
+		<table>
+			<tr>
+				<td class="table-body">
+		<%= yield %>
+				</td>
+				<td class="table-extra"><%= render 'layouts/script'%></td>
+			</tr>
+		</table>
+	</div>
+	<div class="footer">
+		<span> Mamma's Kitchen</span>
+	</div>
+
+</body>
+</html>
