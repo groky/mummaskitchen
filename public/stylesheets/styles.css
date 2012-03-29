@@ -53,9 +53,10 @@ a, a:visited, a:hover{
 
 div.gardenia {
 	position: absolute;
-	top: -0.8em;
+	top: 1.2em;
 	height: 300px;
 	width: 440px;
+	right: -3cm;
 	/*background: #fff url('../images/gardenia.png') top left no-repeat;*/
 }
 
@@ -63,7 +64,7 @@ span.title-box {
 	position: relative;
 	/*font-family: Phyllis,'Easy Street EPS',cursive;*/
 	font-family: 'Allura', cursive;
-	font-size: 6.5em;
+	font-size: 6em;
 	background-color: #eeece1;
 	padding-left: 1em;
 	padding-right: 1em;
