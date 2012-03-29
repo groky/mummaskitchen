@@ -2,7 +2,8 @@ html {
 	height: 100%;
 	width:	100%;
 	/*font-family: Georgia, Helvetica, sans-serif;*/
-	font-family: Phyllis, 'Lucida Handwriting',cursive;
+	/*font-family: Phyllis, 'Lucida Handwriting',cursive;*/
+	font-family: 'Shadows Into Light Two', cursive;
 	background: #ccc;
 }
 
@@ -60,7 +61,8 @@ div.gardenia {
 
 span.title-box {
 	position: relative;
-	font-family: Phyllis,'Easy Street EPS',cursive;
+	/*font-family: Phyllis,'Easy Street EPS',cursive;*/
+	font-family: 'Allura', cursive;
 	font-size: 6.5em;
 	background-color: #eeece1;
 	padding-left: 1em;
