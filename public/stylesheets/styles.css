@@ -3,37 +3,59 @@ html {
 	width:	100%;
 	/*font-family: Georgia, Helvetica, sans-serif;*/
 	font-family: Phyllis, 'Lucida Handwriting',cursive;
+	background: #ccc;
 }
 
 body {
-	width: 910px;
+	width: 930px;
 	margin-left: auto;
 	margin-right: auto;
+	height: 100%;	
+}
+
+ul {
+	padding: 0px;
+}
+
+div.body{
+	position: relative;
 	height: 100%;
-	width:	910px;
+	top: 3cm;
 	
 }
 
-table {
-	width: 100%;
+div.main-content {
+	padding-left: 30px;
 }
 
-td.table-body {
-	width: 625px;
+div.blurb {
+	position: absolute;
+	top: -1.9cm;
+	width: 256px;
+	left: 700px;
+	background: #f4f4f2;
+	padding: 10px;
+	opacity: 0.8;
+	border: 2px solid #fff;
 }
 
-td.table-extra {
-	width: 285px;
-	padding-left: 35px;
-	padding-top: 40px;
-}
-
-span.blurb{
+div.blurb span{
 	font-size: 20px;
+	color: #000;
+	text-shadow: 3px 3px 5px #C8C8C8;
+	-moz-text-shadow:3px 3px 5px #C8C8C8;
 }
 
 a, a:visited, a:hover{
 	text-decoration: none;
+}
+
+div.gardenia {
+	position: absolute;
+	top: -0.8em;
+	height: 300px;
+	width: 440px;
+	/*background: #fff url('../images/gardenia.png') top left no-repeat;*/
 }
 
 span.title-box {
@@ -46,59 +68,77 @@ span.title-box {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	border: #fff 6px solid;
-	box-shadow: 2px 2px 2px 2px #ccc;
-	-moz-box-shadow: 2px 2px 2px 2px #ccc;
+	box-shadow: 2px 2px 2px 2px #c0c0c0;
+	-moz-box-shadow: 2px 2px 2px 2px #c0c0c0;
 	top: 50px;
 	left: 30px;
 }
 
-span.title, span.box-header, li a{
-	color:  #524735;
-	text-shadow: 3px 3px 5px #f1e9d2, 1px 1px 3px #ccc;
+span.title{
+	text-shadow: 3px 3px 5px #ccc;
+	-moz-text-shadow:3px 3px 5px #ccc;
 }
 
-span.box-header{
-	font-size: 0.5cm;
-	line-height: 35px;
-	background-color: #828282;
-	padding: 4px 4px 4px 4px;
-	width: 364px;
+span.title, span.box-header, li a{
+	/*color:  #524735;*/
+	color: #000;
+}
+
+li a{
+	text-shadow: 3px 3px 5px #f1e9d2, 1px 1px 3px #ccc;
+	-moz-text-shadow:3px 3px 5px #f1e9d2, 1px 1px 3px #ccc;;
 }
 
 div.bg-image{
 	position: absolute;
-	background: #fff url('../images/mumma.png') top center no-repeat;
-	opacity: 0.3;
-	z-index: -1;
-	width: 616px;
-	height: 1160px;
+	background: #fff url('../images/mumma-bw.png') top center no-repeat;
+	opacity: 0.4;
+	z-index: -2;
+	width: 910px;
+	height: 1190px;
+	border: 2px #fff solid;
 }
 
 div.top-nav {
 	position: relative;
-	top: 130px;
+	top: 110px;
 }
 
 div.top-nav ul li{
 	position: relative;
 	display: inline-block;
 	list-style-type: none;
-	padding-right: 1.5em;
+	padding-right: 15px;
+	padding-left: 15px;
 	word-wrap: auto;
 }
 
 .top-nav li a {
-	border: solid 2px #ccc;
+	border: solid 2px #CCC;
 	padding: 15px;
 	font-size: 20px;
+	word-wrap: auto;
+	/*background: #f6f4ea;*/
+	background: #f4f4f2;
+	opacity: 0.8;
+	outline: 1px 1px #fff;
+}
+
+input[type="text"], input[type="password"]{
+	padding: 5px;
+	line-height: 30px;
+	font-size: 16px;
+	background:#f8f8f7;
+}
+
+div.login{
+	padding-top: 30px;
+	padding-left: 30px;
 }
 
 div.footer{
 	position: relative;
-	border-top: 5px solid #9bbb59;
 	width: 520px;
-	left: 95px;
-	top: 130px;
 }
 
 div.footer span {
@@ -112,5 +152,3 @@ div.footer span {
 	border-radius: 15px;
 	-moz-border-radius: 15px;
 }
-
-/* bottom line colour: #9bbb59*/

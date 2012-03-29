@@ -1,6 +1,23 @@
 Mummaskitchen::Application.routes.draw do
-  
   root :to => "home#index"
+  
+  
+  resources :session, :controller => 'session'
+  
+  match "session/new", :to => "session#new"
+
+  get "session/create"
+
+  get "session/destroy"
+
+  resources :customer, :controller => 'customer'
+  
+  match "register", :to => "customer#register"
+  match "login", :to => "customer#login"
+
+  get "customer/order"
+
+  get "customer/update"
   
   match '/', :to => "home#index"
   

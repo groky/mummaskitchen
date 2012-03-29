@@ -12,21 +12,17 @@
 		
 		<div class="bg-image"></div>
 		<span class="title-box">Mumma's &nbsp;Kitchen</span>
-
+		<div class="gardenia"><img src="images/gardenia.png" alt="Gardenia" height="225px" width="250px"></img></div>
 		<%= render 'layouts/header' %>
 	</div>
 	<div class="body">
-		<table>
-			<tr>
-				<td class="table-body">
-		<%= yield %>
-				</td>
-				<td class="table-extra"><%= render 'layouts/script'%></td>
-			</tr>
-		</table>
+		<div class="main-content">
+			<%= yield %>
+		</div>
+
+		<%= render 'layouts/script'%>
 	</div>
 	<div class="footer">
-		<span> Mamma's Kitchen</span>
 	</div>
 
 </body>
