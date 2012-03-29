@@ -53,10 +53,10 @@ a, a:visited, a:hover{
 
 div.gardenia {
 	position: absolute;
-	top: 1.2em;
+	top: 1.5em;
 	height: 300px;
 	width: 440px;
-	right: -3cm;
+	right: 0px;
 	/*background: #fff url('../images/gardenia.png') top left no-repeat;*/
 }
 
@@ -66,18 +66,20 @@ span.title-box {
 	font-family: 'Allura', cursive;
 	font-size: 6em;
 	background-color: #eeece1;
-	padding-left: 1em;
-	padding-right: 1em;
+	padding-left: 40px;
+	padding-right: 40px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	border: #fff 6px solid;
 	box-shadow: 2px 2px 2px 2px #c0c0c0;
 	-moz-box-shadow: 2px 2px 2px 2px #c0c0c0;
 	top: 50px;
-	left: 30px;
+	left: 1cm;
 }
 
 span.title{
+	width: 700px;
+	word-wrap: none;
 	text-shadow: 3px 3px 5px #ccc;
 	-moz-text-shadow:3px 3px 5px #ccc;
 }
