@@ -1,0 +1,36 @@
+<errors>
+	<%=flash[:notice] if @flash.nil? && flash[:notice].present? %>
+</errors>
+<h1><%= @header %></h1>
+<% if @dishes.nil? %>
+	<p>
+		Whoops! I must've forgotten the stuff for the menu....
+	</p>
+<% else %>
+
+<table>
+	<% @dishes.each do |d| %>
+	<tr>
+		<td>
+			<p><%= link_to d.name, "/dish/dish/#{d.id}" %><br /><small><%=d.description%></small></p>
+		</td>
+
+		<% d.prices(d.id).each do |p| %>
+
+			<td><%= p.size==2 ? "Medium" : "Large" %></td>
+			<td>$<%=currency(p.price) %></td>
+			<td class="add">
+				<a href="/session/add/<%=d.menu_id %>/<%=p.dish_id %>/<%=p.id%>" class="plate">
+					<% if p.quantity==0 %>
+						<errors>N/A</errors>
+					<%else%>
+						Add to plate
+					<%end%>
+				</a>
+			</td>
+				
+		<%end%>
+	</tr>
+	<%end%>
+</table>
+<%end%>

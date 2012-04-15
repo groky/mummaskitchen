@@ -14,4 +14,9 @@ class HomeController < ApplicationController
   def menu
     @title = "Menu"
   end
+  
+  def freezer
+    @title = @header = "Freezer"
+    @dishes = Dish.freezerall 
+  end
 end

@@ -1,31 +1,47 @@
 Mummaskitchen::Application.routes.draw do
+
   root :to => "home#index"
+
+  #the dish stuff
+  resources :dish, :controller=>'dish'
   
+  match 'dish/dish/:id', :to => 'dish#dish'
+  match 'dish/dishes/:menu_id/:freezer', :to => 'dish#dishes'
+  match 'dish/index', :to => 'dish#index'
+
+  #the menu stuff
+  resources :menu, :controller => 'menu'
   
+  match 'menu', :to=>'menu#index'
+  
+  #the session stuff
   resources :session, :controller => 'session'
   
   match "session/new", :to => "session#new"
-
+  match "session/add/:menu_id/:dish_id/:id", :to => "session#add"
+  match "takeaway", :to => "session#takeaway"
+  match "session/delete/:id", :to => "session#delete"
+  match "session/update/:menu_id/:dish_id/:id", :to => "session#update_items"
   get "session/create"
-
   get "session/destroy"
 
+  #the customer stuff
   resources :customer, :controller => 'customer'
+  resources :customerorder
   
   match "register", :to => "customer#register"
-  match "login", :to => "customer#login"
-
+  match "signin", :to => "customer#signin"
+  match "customer/:id/complete", :to => "customer#complete"
+  
   get "customer/order"
-
   get "customer/update"
   
+  # the home stuff
   match '/', :to => "home#index"
-  
   match 'about', :to => "home#about"
-
   match 'contact', :to => "home#contact"
-  
-  match 'menu', :to => "home#menu"
+  #match 'menu', :to => "home#menu" - moved this to menu controller 
+  match 'freezer', :to => "home#freezer"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

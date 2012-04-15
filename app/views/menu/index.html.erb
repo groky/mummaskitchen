@@ -1,0 +1,14 @@
+<h1>Today's Menu</h1>
+
+<% if @menu.nil? %>
+	<p>
+		Whoops! I must've forgotten the stuff for the menu....
+	</p>
+<% else %>
+
+<ul>
+	<% @menu.each do |m| %>
+	<li><p><%= link_to m.name, "/dish/dishes/#{m.id}/f" %><br/><small><%=m.description%></small></p></li>
+	<%end%>
+</ul>
+<%end%>

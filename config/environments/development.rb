@@ -22,5 +22,15 @@ Mummaskitchen::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  # these options are only needed if you choose smtp delivery
+  config.action_mailer.smtp_settings = {
+    :address        => 'smtp.webfaction.com',
+    :port           => 25,
+    :domain         => 'www.mummaskitchen.net',
+    :authentication => :login,
+    :user_name      => 'mumma_mumma',
+    :password       => 'mumma211'
+  }
 end
 

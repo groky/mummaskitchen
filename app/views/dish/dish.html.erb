@@ -1,0 +1,17 @@
+<h1><%=@dish.name%></h1>
+<p><%=@dish.description%></p>
+<ul>
+	
+<% @dish.prices(@dish.id).each do |p| %>
+<li>
+	<%= p.size==2 ? "Medium" : "Large" %> &nbsp;
+	$<%=currency(p.price) %> &nbsp;
+
+<a href="/session/add/<%=@dish.menu_id %>/<%=p.dish_id %>/<%=p.id%>" class="plate">
+	Add to plate
+</a>
+
+	</li>
+<%end%>
+	
+</ul>

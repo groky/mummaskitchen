@@ -1,0 +1,26 @@
+<div class="register">
+	<%=form_for @customer, :url=>{ :controller=>:customer, :action=>:register } do |f|%>
+	<%= render 'shared/errors', :object=>f.object %>
+	<table>
+		<tr>
+			<td><%=f.label :name %></td>
+			<td><%=f.text_field :name ,:class=>"round"%></td>
+		</tr>
+		<tr>
+			<td><%=f.label :surname %></td>
+			<td><%=f.text_field :surname ,:class=>"round"%></td>
+		</tr>
+		<tr>
+			<td><%=f.label :email%></td>
+			<td><%=f.text_field :email ,:class=>"round"%></td>
+		</tr>
+		<tr>
+			<td><%=f.label :phone%></td>
+			<td><%=f.text_field :phone ,:class=>"round"%></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><%=f.submit "Get it sorted"%></td>
+		</tr>
+	</table>
+	<%end%>

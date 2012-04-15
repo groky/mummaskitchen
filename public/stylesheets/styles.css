@@ -14,20 +14,61 @@ body {
 	height: 100%;	
 }
 
+br{
+	clear: both;
+}
+
 ul {
 	padding: 0px;
+	list-style-type: none;
+}
+
+ul li {
+	display:block;
+	list-style-type: none;
+}
+
+table{
+	width: 100%;
+}
+
+img {
+	border: 2px solid #fff;
+	height: 161px;
+	width: 215px;
+	float: right;
+}
+
+div.img {
+	margin: 4px 4px 4px 4px;
 }
 
 div.body{
 	position: relative;
 	height: 100%;
-	top: 3cm;
-	
+	top: 3.5cm;	
 }
 
 div.main-content {
 	padding-left: 30px;
+	font-size: 15px;
+	width: 670px;
+	line-height: 30px;
 }
+
+small{
+	font-size: 13px;
+}
+
+img#eggs, img#pudding{
+	float: right;
+}
+
+img#bolognaise{
+	float: left;
+	margin-right: 4px;
+}
+
 
 div.blurb {
 	position: absolute;
@@ -49,6 +90,33 @@ div.blurb span{
 
 a, a:visited, a:hover{
 	text-decoration: none;
+	/*text-shadow: 3px 3px 5px #fff;
+	-moz-text-shadow:3px 3px 5px #fff;*/
+}
+
+td.add {
+	height:75px;
+	width: 75px;
+	/*border-right: 1px solid #000;*/
+	background: url("../images/plate.png") center no-repeat;
+}
+
+td.vspace{
+	height: 30px;
+}
+
+div.basket{
+	font-size: 12px;
+}
+
+.checkout-button{
+	margin-top: 15px;
+	padding: 5px 5px 5px 5px;
+	background: #fff;
+	opacity: none;
+	font-size: 14px;
+	box-shadow: 3px 3px 5px #000;
+	-moz-box-shadow:3px 3px 5px #000;
 }
 
 div.gardenia {
@@ -63,7 +131,7 @@ div.gardenia {
 span.title-box {
 	position: relative;
 	/*font-family: Phyllis,'Easy Street EPS',cursive;*/
-	font-family: 'Allura', cursive;
+	/*font-family: 'Ruthie', cursive;*/
 	font-size: 6em;
 	background-color: #eeece1;
 	padding-left: 40px;
@@ -77,16 +145,17 @@ span.title-box {
 	left: 1cm;
 }
 
+
+span.title, span.box-header, li a, a{
+	/*color:  #524735;*/
+	color: #000;
+}
+
 span.title{
 	width: 700px;
 	word-wrap: none;
-	text-shadow: 3px 3px 5px #ccc;
-	-moz-text-shadow:3px 3px 5px #ccc;
-}
-
-span.title, span.box-header, li a{
-	/*color:  #524735;*/
-	color: #000;
+	text-shadow: 3px 3px 5px #000;
+	-moz-text-shadow:3px 3px 5px #000;
 }
 
 li a{
@@ -129,6 +198,17 @@ div.top-nav ul li{
 	outline: 1px 1px #fff;
 }
 
+div.main-content {
+	color: #fff;
+	text-shadow: 3px 3px 5px #000;
+	-moz-text-shadow:3px 3px 5px #000;
+}
+
+span.signature {
+	font-family: 'Ruthie', cursive;
+	font-size: 1cm;
+}
+
 input[type="text"], input[type="password"]{
 	padding: 5px;
 	line-height: 30px;
@@ -156,4 +236,8 @@ div.footer span {
 .round {
 	border-radius: 15px;
 	-moz-border-radius: 15px;
+}
+
+errors{
+	color: red;
 }

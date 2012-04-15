@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120328001333) do
+ActiveRecord::Schema.define(:version => 20120413044913) do
+
+  create_table "customer_orders", :force => true do |t|
+    t.integer  "customer_id"
+    t.integer  "dish_id"
+    t.integer  "price_id"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -22,5 +31,48 @@ ActiveRecord::Schema.define(:version => 20120328001333) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "dishes", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "menu_id"
+    t.integer  "image_id"
+  end
+
+  create_table "menus", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prices", :force => true do |t|
+    t.integer  "dish_id"
+    t.integer  "size"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quantity"
+    t.boolean  "freezer",    :default => false
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
 end

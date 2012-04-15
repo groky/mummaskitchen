@@ -1,0 +1,41 @@
+<div class="basket">
+	<% if items.size > 0
+		total = 0
+		%>
+		<span>You have <%=item_count %> item(s) in your basket</span>
+		<table>
+		<% freshly_cooked.each do |item|%>
+			<tr>
+			<td><%=link_to "#{item[:name]}", "#{item[:dish]}/#{item[:menu]}/#{item[:price]}" %></td>
+			<td><%=item[:quantity]%> X <%=item[:size]==2 ? "MEDIUM" : "LARGE" %></td>
+			<td>$<%=currency(item[:price])%></td>
+			</tr>
+		<% total += (item[:quantity] * item[:price])		
+		end%>
+		<tr><td colspan=3></td></tr>
+		
+		<% if from_freezer.size>0 %>
+		
+		<tr><td><strong>From the Freezer:</strong></td></tr>
+			
+			<% from_freezer.each do |item| %>
+				<tr>
+					<td><%=link_to "#{item[:name]}", "#{item[:dish]}/#{item[:menu]}/#{item[:price]}" %></td>
+					<td><%=item[:quantity]%> X <%=item[:size]==2 ? "MEDIUM" : "LARGE" %></td>
+					<td>$<%=currency(item[:price])%></td>
+				</tr>
+			<% total += (item[:quantity] * item[:price])
+			end%>
+		<%end%>
+		
+		<tr>
+			<td></td>
+			<td colspan="2"><u><strong>Total:</strong> $<%=currency(total)%></u></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2" class="vspace"><a href="/takeaway" class="checkout-button round">Take it away!!</a></td>
+		</tr>
+		</table>
+	<%end%>
+</div>

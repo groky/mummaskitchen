@@ -1,0 +1,29 @@
+<h1><%= @header %></h1>
+
+<table>
+	<% if !items.nil?
+		items.each do |item|%>
+	<tr>
+		<td><%=link_to "#{item[:name]}", "#{item[:dish]}/#{item[:menu]}/#{item[:price]}" %></td>
+		<td><%=item[:quantity]%> X <%=item[:size]==2 ? "MEDIUM" : "LARGE" %></td>
+		<td>$<%=currency(item[:price])%></td>
+		<td><%=link_to "one more", "/session/update/#{item[:menu]}/#{item[:dish]}/#{item[:id]}",:class=>"checkout-button round"%></td>
+		<td><%=link_to "remove", "/session/delete/#{item[:id]}", :class=>"checkout-button round"%><td>
+	</tr>
+	
+	<%end
+	end%>
+</table>
+
+<table>
+	<tr>
+		<td>
+			<h3>Register here to process your order</h3>
+			<%= render 'customer/form' %>
+		</div>
+		</td>
+		<td>
+			<%= render 'customer/signin_form'%>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,75 @@
+<html>
+<head></head>
+<body>
+<h1>Mumma's Kitchen order confirmation</h1>
+<p>
+	Dear <%=@customer.name%>,<br /><br />
+	Thank you for you order. Please be aware that all orders are pick up only no later than 7pm. The full amount must be paid on pick up of your order.<br/>
+	Your order follows below.<br /><br />
+	
+	Regards,<br />
+	Mumma
+	<br /><br />
+	-------------------------------Mumma's Kitchen----------------------------------------------<br /><br />
+	<h3>Your Order</h3>
+	
+	<table>
+		<%
+		total=0
+		@order.each do |item|
+			if !item.freezer
+		%>
+		<tr>
+			<td><%=item.name(item.dish_id)%></td>
+			<td><%=item.quantity%> X <%=Price.sizew(item.id)%></td>
+			<td>$<%=currency(item.price)%> ea</td>
+			<%total+= (item.price * item.quantity)%>
+		</tr>
+		<%end
+		end%>
+		<tr>
+			<td></td>
+			<td colwidth="2"><%=currency(total)%></td>
+		</tr>
+	</table>
+	<br />
+	
+	<!-- This is the Frozen items-->
+	<h3>Frozen Items</h3>
+
+	<table>
+		<%
+		total=0
+		@order.each do |item|
+			if item.freezer
+		%>
+		<tr>
+			<td><%=item.name(item.dish_id)%></td>
+			<td><%=item.quantity%> X <%=Price.sizew(item.id)%></td>
+			<td>$<%=currency(item.price)%> ea</td>
+			<%total+= (item.price * item.quantity)%>
+		</tr>
+		<%end
+		end%>
+		<tr>
+			<td></td>
+			<td colwidth="2"><%=currency(total)%></td>
+		</tr>
+	</table>
+	<br />
+	
+	<!-- End of Frozen items -->
+	
+	<% if !@unorder.nil? && @unorder.size>0 %>
+	<h3>Items not ordered due to availability at the time of ordering</h3><br/>
+	<table>
+		<%@unorder.each do |item|%>
+		<tr>
+			<td><%=item.name(item.dish_id)%></td>
+			<td><%=item.quantity%> X <%=Price.sizew(item.id)%></td>
+		</tr>
+		<%end%>
+	</table>	
+	<%end%>
+</body>
+</html>

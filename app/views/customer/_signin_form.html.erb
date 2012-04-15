@@ -1,0 +1,21 @@
+<div class="signin">
+	<h3>Already registered? Sign in here</h3>
+	<div class="errors"></div>
+	<%=form_for @customer, :url=>{:controller=>:customer, :action=>:signin} do |f|%>
+	<%= render 'shared/errors', :object=>f.object %>
+	<table>
+			<tr>
+				<td><%=f.label :email%></td>
+				<td><%=f.text_field :email ,:class=>"round"%></td>
+			</tr>
+			<tr>
+				<td><%=f.label :phone%></td>
+				<td><%=f.text_field :phone ,:class=>"round"%></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><%=f.submit "Get it sorted"%></td>
+			</tr>		
+	</table>
+	<%end%>
+</div>

@@ -1,0 +1,84 @@
+module SessionHelper
+  
+
+  def initialise
+    cookies.permanent.signed[:remember_token] = nil
+
+  end
+  
+  def add_item(price)
+    initialise if !initialised?
+    
+    dish = Dish.find(price.dish_id)
+    
+    session[:dish] if session[:dish].nil?
+    
+    session[:dish].push(price)
+    
+    item = "#{dish.name},#{price.id},#{price.dish_id},#{price.price.to_s},#{price.size}, 1"
+    
+    items = cookies[:remember_token].to_s.split('!').push(item).join('!')
+    cookies[:remember_token] = items
+  end
+  
+  def initialised?
+    !cookies[:remember_token].nil?
+  end    
+  
+  def items
+    !cookies[:remember_token].nil? ? cookies[:remember_token] : nil
+  end
+  
+  def plate
+    session[:dish]
+  end
+  
+  #private stuff
+  private 
+    
+    def item_in_list?(price)
+      #counter=0
+      #if initialised?
+      #  item_hash.each do |s|
+      #    dish = item(s)
+      #    if price.id.to_s==dish[1] then break end
+      #    counter++
+      #  end
+      #end
+      #{:found=>true, :loc=>counter, :item=>dish}
+    end
+    
+    def find_item(price)
+      
+      #if initialised?
+      #  item_hash.each do |s| # {name, id, dish_id, price, size, etc}
+      #    dish = item(s)
+      #    return dish if price.id.to_s==dish[1]
+      #  end
+      #end     
+    end
+    
+    def update_quantity(dish, quantity, location)
+      dish[5]=quantity
+      f = item_hash
+      f[location]=dish
+      
+      #f.each do |g|
+      #  g.each do |h|
+      #    str = "#{h[0]},#{h[1]},#{h[2]},#{h[3]},#{h[4]},#{h[5]}"
+      #  end
+      #  str = "#{str}!"
+      #end
+      
+      #cookies[:remember_token] = str
+    end
+    
+    def item_hash
+      cookies[:remember_token].to_s.split('!')
+    end
+    
+    def item(element)
+      element.split(',')
+    end
+
+end
