@@ -5,7 +5,8 @@ class DishController < ApplicationController
   end
   
   def dishes
-    @dishes = Dish.freezer(params[:menu_id],params[:freezer])    
+    @dishes = Dish.freezer(params[:menu_id],params[:freezer])
+    @where = params[:freezer]
     @header = Menu.find(params[:menu_id]).name
   end
   

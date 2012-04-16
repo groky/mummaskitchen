@@ -4,8 +4,8 @@ class Dish < ActiveRecord::Base
   has_many :prices
   
   # todo - this is not DRY
-  def prices(id)
-    Price.find_all_by_dish_id(id)
+  def prices(id, where)
+    Price.find(:all, :conditions=>"dish_id=#{id} and freezer='#{where}'")
   end
   
   # use this method to find specific dishes on the menu

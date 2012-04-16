@@ -15,7 +15,7 @@
 			<p><%= link_to d.name, "/dish/dish/#{d.id}" %><br /><small><%=d.description%></small></p>
 		</td>
 
-		<% d.prices(d.id).each do |p| %>
+		<% d.prices(d.id, @where).each do |p| %>
 
 			<td><%= p.size==2 ? "Medium" : "Large" %></td>
 			<td>$<%=currency(p.price) %></td>

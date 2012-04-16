@@ -17,6 +17,7 @@ class HomeController < ApplicationController
   
   def freezer
     @title = @header = "Freezer"
+    @where = 't' # true for being in the freezer
     @dishes = Dish.freezerall 
   end
 end
