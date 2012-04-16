@@ -7,8 +7,9 @@ class CustomerMailer < ActionMailer::Base
     @customer = customer
     @order = order
     @unorder = not_ordered
-
-    mail(:to=>@customer.email, :subject=>"Order confirmation", :bcc=>:from)
+    
+    mail(:to=>@customer.email, :subject=>"Order confirmation", :bcc=>:from, :content_type=>"text/plain")
+    
   end
   
   #def vendor_notify(customer)

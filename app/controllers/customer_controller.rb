@@ -59,6 +59,8 @@ class CustomerController < ApplicationController
         price.quantity = price.quantity - o[:quantity]
         price.save
         
+        # make sure you send the correct quantity to the order confirmation
+        price.quantity = o[:quantity]
         #add it to a list of ordered items
         corder << price
       else
@@ -72,9 +74,12 @@ class CustomerController < ApplicationController
     uncorder.each { |i| drop(i)}   
   
     #then email the client
-    CustomerMailer.order_confirmation(customer, corder, uncorder).deliver
-
-    redirect_to :controller=>:customer, 'id'=>@customer.id, :action=>:complete
+    
+    if CustomerMailer.order_confirmation(customer, corder, uncorder).deliver
+      redirect_to :controller=>:customer, 'id'=>@customer.id, :action=>:complete
+    else
+      render :text=>"Your email could not be sent. There must have been a problem"
+    end
   end
   
   def has_orders?

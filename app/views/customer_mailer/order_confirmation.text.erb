@@ -1,0 +1,46 @@
+Mumma's Kitchen order confirmation
+
+Dear <%=@customer.name%>,
+
+Thank you for you order. Please be aware that all orders are pick up only no later than 7pm. The full amount must be paid on pick up of your order.
+
+Your order follows below.
+	
+Regards,
+Mumma
+
+
+	-------------------------------Mumma's Kitchen----------------------------------------------
+	Your Order
+		
+		<% total=0
+		@order.each do |item|
+			if !item.freezer
+		%>
+		<%=item.name(item.dish_id)%>   <%=item.quantity%> X <%=Price.sizew(item.id)%> @ $<%=currency(item.price)%> ea
+			<%total+= (item.price * item.quantity)%>
+		<%end
+		end%>
+		--------------------------------------------
+		
+	Frozen Items
+
+		<% @order.each do |item|
+			if item.freezer
+		%>
+		<%=item.name(item.dish_id)%>  <%=item.quantity%> X <%=Price.sizew(item.id)%> @ $<%=currency(item.price)%> ea
+			<%total+= (item.price * item.quantity)%>
+
+		<%end
+		end%>
+																					_______________________________
+																					Total  <%=currency(total)%>
+
+		--------------------------------------------
+	<% if !@unorder.nil? && @unorder.size>0 %>
+	Items not ordered due to availability at the time of ordering
+	
+		<%@unorder.each do |item|%>
+		<%=item.name(item.dish_id)%>   <%=item.quantity%> X <%=Price.sizew(item.id)%>
+		<%end%>	
+	<%end%>

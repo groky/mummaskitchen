@@ -15,7 +15,7 @@ Mummaskitchen::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -24,13 +24,13 @@ Mummaskitchen::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
   
   # these options are only needed if you choose smtp delivery
-  config.action_mailer.smtp_settings = {
-    :address        => 'smtp.webfaction.com',
-    :port           => 25,
-    :domain         => 'www.mummaskitchen.net',
-    :authentication => :login,
-    :user_name      => 'mumma_mumma',
-    :password       => 'mumma211'
-  }
+  #config.action_mailer.smtp_settings = {
+  #  :address        => 'smtp.webfaction.com',
+  #  :port           => 25,
+  #  :domain         => 'www.mummaskitchen.net',
+  #  :authentication => :login,
+  #  :user_name      => 'mumma_mumma',
+  #  :password       => 'mumma211'
+  #}
 end
 
