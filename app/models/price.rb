@@ -19,4 +19,19 @@ class Price < ActiveRecord::Base
     find(id).size==1 ? "LARGE" : "MEDIUM"
   end
   
+  def self.build(dish_id)
+    for i in 0..3
+      price=Price.new
+      
+      price.dish_id=dish_id
+      
+      price.size = ((i==0 || i==2) ? 1 : 2)
+      price.price = ((i==0 || i==2) ? 6 : 4)
+      price.freezer = ((i==0 || i==1) ? true : false)
+      price.quantity=0
+      price.save
+  
+    end
+  end
+  
 end

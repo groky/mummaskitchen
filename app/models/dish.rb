@@ -25,5 +25,5 @@ class Dish < ActiveRecord::Base
           :conditions=>"freezer='t'",
           :order=>"menu_id, dish_id")
   end
-
+  
 end
