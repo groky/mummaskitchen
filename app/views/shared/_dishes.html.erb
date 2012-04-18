@@ -7,8 +7,9 @@
 		Whoops! I must've forgotten the stuff for the menu....
 	</p>
 <% else %>
-
+<%=will_paginate @dishes%>
 <table>
+	
 	<% @dishes.each do |d| %>
 	<tr>
 		<td>
@@ -33,4 +34,5 @@
 	</tr>
 	<%end%>
 </table>
+<%=will_paginate @dishes%>
 <%end%>
