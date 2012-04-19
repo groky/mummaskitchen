@@ -1,0 +1,4 @@
+<%=form_for :photos, :html=>{:multipart=>true} do |l|%>
+<%=l.label "Add image"%> <br />
+<%=l.file_field :name %>&nbsp; <%=l.submit "upload"%>
+<%end%>

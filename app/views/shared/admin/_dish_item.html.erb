@@ -1,0 +1,14 @@
+<%=form_for :price do |f| %>
+	<%=f.label :price%> <br/>
+	$<%=f.text_field :price, :class=>"round"%><br />
+	<%=f.label :size%><br />
+	<select name="price[size]" >
+		<option value="1" <%="selected=true"if @price.size==1%>>LARGE</option>
+		<option value="2" <%="selected=true"if @price.size==2%>>MEDIUM</option>
+	</select> <br/>
+	<%=f.label :quantity%><br />
+	<%=f.text_field :quantity, :class=>"round"%><br />
+	<%=f.label :freezer%><br/>
+	<%=f.check_box :freezer, :checked=>@price.freezer%><br/>
+	<%=f.submit "Save"%>
+<%end%>

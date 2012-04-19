@@ -1,0 +1,28 @@
+<% if signed_in? %>
+<%=render 'shared/admin/nav_header'%>
+<h1>Administer Menu Items</h1>
+
+<%if !@menus.nil? && @menus.size>0%>
+<table>
+	<%@menus.each do |mi|%>
+	<tr>
+		<td class="cms-table">
+			<span><%=mi.name%><br/><small><%=mi.description%></small></span>
+		</td>
+		<td class="cms-table">
+			<span class="cms-menu round"><%=link_to "Edit", :controller=>"admin", :action=>"update_menu_item", 'id'=>"#{mi.id}"%></span>
+		</td>
+		<td class="cms-table">
+			<span class="cms-menu round"><%=link_to "Delete", :controller=>"admin", :action=>"delete_menu_item", 'id'=>"#{mi.id}"%></span>
+		</td>
+		<td class="cms-table">
+			<span class="cms-menu round"><%=link_to "View dishes", :controller=>"admin", :action=>"dishes", 'menu_id'=>"#{mi.id}"%></span>
+		</td>
+	</tr>
+	<%end%>
+</table>
+<%else%>
+There are no menu items to administer
+<%end%>
+<%=link_to "Add menu item", :controller=>:admin, :action=>:add_menu_item%>
+<%end%>

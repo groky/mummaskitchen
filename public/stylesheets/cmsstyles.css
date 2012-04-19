@@ -1,0 +1,22 @@
+th{
+	text-align: left;
+}
+td.cms-table{
+	border-bottom: 1px solid #CCC;
+	
+}
+
+span.cms-menu{
+	background-color: white;
+	padding: 4px 10px 4px 10px;
+}
+
+img.cms-small{
+	height: 75px;
+	width: 75px;
+	border: 2px solid #fff;
+}
+
+small{
+	font-size: 12px;
+}

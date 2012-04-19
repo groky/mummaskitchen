@@ -1,0 +1,35 @@
+<%if signed_in?%>
+<%=render 'shared/admin/nav_header'%>
+<h1>Items for <%=@dish.name%></h1>
+
+<table>
+	<thead>
+		<th>Price</th>
+		<th>Size</th>
+		<th>Quantity</th>
+		<th>Location</th>
+		<th></th>
+	</thead>
+	<% @prices.each do |p|%>
+	<tr>
+		<td class="cms-table">
+			$<%=currency(p.price)%>
+		</td>
+		<td class="cms-table">
+			<%=Price.sizew(p.id)%>
+		</td>
+		<td class="cms-table">
+			<%=p.quantity%>
+		</td>
+		<td class="cms-table">
+			<%=p.freezer ? 'FREEZER' : 'FRESH'%>
+		</td>
+		<td class="cms-table">
+			<span class="cms-menu round"><%=link_to "Edit", :controller=>"admin", :action=>:update_dish_items, 'id'=>"#{p.id}"%></span>
+		</td>
+		</td>
+	</tr>
+	<%end%>
+</table>
+<%=link_to "Add dish item", :controller=>:admin, :action=>:add_dish_items, 'dish_id'=>@dish.id%>
+<%end%>

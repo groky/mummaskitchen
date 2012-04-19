@@ -1,0 +1,5 @@
+<%=link_to "Menus", :controller=>:admin, :action=>:menu%> &nbsp;
+<%=link_to "Dishes", :controller=>:admin, :action=>:dishes%> &nbsp;
+<%=link_to "Images", :controller=>:admin, :action=>:upload%> &nbsp;
+
+<%=current_admin.name%>&nbsp;[<%=link_to "sign out", :controller=>:admin, :action=>:signout%>]

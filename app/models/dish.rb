@@ -8,6 +8,17 @@ class Dish < ActiveRecord::Base
     Price.find(:all, :conditions=>"dish_id=#{id} and freezer='#{where}'")
   end
   
+  def self.alldishes(menu_id=nil, page)
+        if !menu_id.nil?
+          paginate  :all, :per_page=>8, :page=>page,
+                    :select=>"DISTINCT \"dishes\".*",  
+                    :conditions=>"menu_id=#{menu_id}"
+        else
+          paginate  :all, :per_page=>8, :page=>page,
+                    :select=>"DISTINCT \"dishes\".*"          
+        end
+  end
+  
   # use this method to find specific dishes on the menu
   # this populates the dishes page after the menu is selected
   def self.freezer(menu_id, freezer, page)
@@ -24,6 +35,10 @@ class Dish < ActiveRecord::Base
           :joins=>:prices,
           :conditions=>"freezer='t'",
           :order=>"menu_id, dish_id"
+  end
+  
+  def image(image_id=nil)
+    Photos.find(image_id) if !image_id.nil?
   end
   
 end

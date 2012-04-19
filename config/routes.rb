@@ -1,13 +1,44 @@
 Mummaskitchen::Application.routes.draw do
 
+  #the cms
+  match "admin", :to=>"admin#login"
+  match "admin/menu", :to=>"admin#menu"
+  match "admin/ami", :to=>"admin#add_menu_item"
+  match "admin/umi/:id", :to=>"admin#update_menu_item"
+  match "admin/dmi/:id", :to=>"admin#delete_menu_item"
+  
+  match "admin/dishes/:menu_id", :to=>"admin#dishes"
+  match "admin/dishes", :to=>"admin#dishes"
+  match "admin/ad/:menu_id", :to=>"admin#add_dish"
+  match "admin/ad", :to=>"admin#add_dish"
+  match "admin/ud/:id", :to=>"admin#update_dish"
+  match "admin/dd/:id", :to=>"admin#delete_dish"
+  
+  match "admin/di/:dish_id", :to=>"admin#dish_items"
+  match "admin/id", :to=>"admin#dish_items"
+  match "admin/adi/:dish_id", :to=>"admin#add_dish_items"
+  match "admin/udi/:id/:dish_id", :to=>"admin#update_dish_items"
+  
+  match "admin/upload", :to=>"admin#upload"
+  match "admin/tablet", :to=>"admin#tablet"
+  match "admin/signout", :to=>"admin#signout"
+
+
   root :to => "home#index"
 
+  #the photos
+  resources :photos, :controller=>'photos'
+  match "photos/add/:dish_id", :to=>"photos#add"
+  get "photos/add"
+  get "photos/update"
+  get "photos/index"
   #the dish stuff
   resources :dish, :controller=>'dish'
   
   match 'dish/dish/:id', :to => 'dish#dish'
   match 'dish/dishes/:menu_id/:freezer', :to => 'dish#dishes'
   match 'dish/index', :to => 'dish#index'
+
 
   #the menu stuff
   resources :menu, :controller => 'menu'

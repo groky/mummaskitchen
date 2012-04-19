@@ -1,0 +1,10 @@
+<%=form_for :dish do |f|%>
+	<%=f.label :name%><br />
+	<%=f.text_field :name ,:class=>"round"%><br />
+	<%=f.label :description%><br />
+	<%=f.text_area :description,:class=>"round"%><br />
+	<%=f.label :menu_id, 'Menu' %><br />
+	<%=f.collection_select :menu_id, @menus, :id, :name %><br />
+	<%=link_to "Add photo", :controller=>:photos, :action=>:add, :dish_id=>"#{@dish.id}"%><br />	
+	<%=f.submit "Save"%>
+<%end%>

@@ -1,0 +1,35 @@
+
+<%if signed_in?%>
+<%=render 'shared/admin/nav_header'%>
+<h1>Administer Dishes</h1>
+	
+	<%if !@dishes.nil? && @dishes.size > 0 %>
+	<%=will_paginate @dishes%>
+		<table>
+			<%@dishes.each do |dish|%>
+			<tr>
+				<td class="cms-table">
+					<span><%=dish.name%><br/><small><%=truncate(dish.description)%></small></span>
+					<%if !dish.image(dish.image_id).nil?%>
+					<img class="cms-small round" src=<%="images/#{dish.image(dish.image_id)}"%>></img>
+					<%end%>
+				</td>
+				<td class="cms-table">
+					<span class="cms-menu round"><%=link_to "Edit", :controller=>"admin", :action=>"update_dish", 'id'=>"#{dish.id}"%></span>
+				</td>
+				<td class="cms-table">
+					<span class="cms-menu round"><%=link_to "Delete", :controller=>"admin", :action=>"delete_dish", 'id'=>"#{dish.id}"%></span>
+				</td>
+				<td class="cms-table">
+					<span class="cms-menu round"><%=link_to "View dish items", :controller=>"admin", :action=>"dish_items", 'dish_id'=>"#{dish.id}"%></span>
+				</td>
+			</tr>
+
+			<%end%>
+		</table>
+		<%=will_paginate @dishes%>
+	<%else%>
+		There are no dishes
+	<%end%>
+	<%=link_to "Add dish", :controller=>:admin, :action=>:add_dish%>
+<%end%>

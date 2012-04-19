@@ -1,0 +1,8 @@
+<h1>Mumma's Kitchen Admin Login</h1>
+<%=form_for url_for(:controller=>:admin, :action=>:login) do |f|%>
+	<%=f.label :email %><br/>
+	<%=f.text_field :email, :class=>"round"%> <br />
+	<%=f.label :phone %><br />
+	<%=f.text_field :phone, :class=>"round"%><br />
+	<%=f.submit "Login"%>
+<%end%>
