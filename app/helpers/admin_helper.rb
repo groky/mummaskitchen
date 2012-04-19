@@ -29,6 +29,10 @@ module AdminHelper
     redirect_to admin_path, :notice => "Please login to access this page."
   end
   
+  def logout
+    kill
+  end
+  
   private 
   
     def admin_from_remember_token
@@ -40,5 +44,9 @@ module AdminHelper
 
     def remember_token
       cookies.signed[:remember_token] || [nil]
+    end
+    
+    def kill
+      cookies[:remember_token] = nil
     end
 end

@@ -3,6 +3,9 @@ class AdminController < ApplicationController
   include AdminHelper
   
   def login
+    
+    #render :tablet if signed_in?
+    
     @customer = Customer.new
     
     if params['/admin'].present?
@@ -126,6 +129,8 @@ class AdminController < ApplicationController
   
   def signout
     #create a signout action at admin_helper
+    logout
+    redirect_to :controller=>:home, :action=>:index
   end
 
 end
