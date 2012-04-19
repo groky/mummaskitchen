@@ -7,7 +7,7 @@
 	<%@menus.each do |mi|%>
 	<tr>
 		<td class="cms-table">
-			<span><%=mi.name%><br/><small><%=mi.description%></small></span>
+			<span><%=mi.name%><br/><small><%=truncate(mi.description)%></small></span>
 		</td>
 		<td class="cms-table">
 			<span class="cms-menu round"><%=link_to "Edit", :controller=>"admin", :action=>"update_menu_item", 'id'=>"#{mi.id}"%></span>
