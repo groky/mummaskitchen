@@ -25,7 +25,7 @@ private
   def upload(file)
     directory = "public/images/"
     path=Rails.root.join(directory, file.original_filename)
-    File.open(path, "wb") {|f| f.write file.read }
+    File.open(path.to_s, "wb") {|f| f.write file.read }
   end
 
 end
