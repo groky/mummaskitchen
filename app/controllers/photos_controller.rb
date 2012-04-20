@@ -23,8 +23,8 @@ class PhotosController < ApplicationController
 
 private
   def upload(file)
-    directory = "./public/images/"
-    path=File.join(directory, file.original_filename)
+    directory = "public/images/"
+    path=Rails.root.join(directory, file.original_filename)
     File.open(path, "wb") {|f| f.write file.read }
   end
 
