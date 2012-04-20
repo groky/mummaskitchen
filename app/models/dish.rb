@@ -37,8 +37,8 @@ class Dish < ActiveRecord::Base
           :order=>"menu_id, dish_id"
   end
   
-  def image(image_id=nil)
-    Photos.find(image_id) if !image_id.nil?
+  def images(dish_id)
+    Photos.find_all_by_dish_id(dish_id)
   end
   
 end

@@ -60,6 +60,18 @@ small{
 	font-size: 13px;
 }
 
+img.thumbnail{
+	height: 65px;
+	width: 65px;
+	border: 2px solid #fff;
+	float: left;
+}
+
+img.display{
+	float:left;
+	margin-right: 10px;
+}
+
 img#eggs, img#pudding{
 	float: right;
 }

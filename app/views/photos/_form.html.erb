@@ -1,0 +1,7 @@
+<%=form_for :photos do |f|%>
+	<%=f.label :name%> <br />
+	<%=f.file_field :name %> <br />
+	<%=f.label :dish_id, "Dish"%> <br />
+	<%=f.collection_select(:dish_id, @dishes, :id, :name)%> <br />
+	<%=f.submit "Save"%>
+<%end%>

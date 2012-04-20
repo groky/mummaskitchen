@@ -10,8 +10,11 @@
 			<tr>
 				<td class="cms-table">
 					<span><%=dish.name%><br/><small><%=truncate(dish.description)%></small></span>
-					<%if !dish.image(dish.image_id).nil?%>
-					<img class="cms-small round" src=<%="images/#{dish.image(dish.image_id)}"%>></img>
+					<%if !dish.images(dish.id).nil?
+						images = dish.images(dish.id)%>
+						<%images.each do |image|%>
+					<img class="thumbnail round" src=<%="/images/#{image.name}"%>></img>
+						<%end%>
 					<%end%>
 				</td>
 				<td class="cms-table">

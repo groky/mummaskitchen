@@ -13,7 +13,16 @@
 	<% @dishes.each do |d| %>
 	<tr>
 		<td>
-			<p><%= link_to d.name, "/dish/dish/#{d.id}" %><br /><small><%=d.description%></small></p>
+			<p>
+				<%= link_to d.name, "/dish/dish/#{d.id}" %><br />
+				<small><%=truncate d.description%></small> <br />
+				<% images = d.images(d.id)
+					if !images.nil? && images.size>0 
+						images.each do |image|%>
+						<img class="round thumbnail" src="/images/<%=image.name%>"></img>&nbsp;
+						<%end%>
+					<%end%>
+			</p>
 		</td>
 
 		<% d.prices(d.id, @where).each do |p| %>

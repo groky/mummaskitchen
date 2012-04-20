@@ -28,3 +28,9 @@
 <%end%>
 	
 </ul>
+<%images = @dish.images(@dish.id)
+	if !images.nil? && images.size>0
+		images.each do |image|%>
+		<img class="round display" src="/images/<%=image.name%>"></img>
+		<%end%>
+	<%end%>
