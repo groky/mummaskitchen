@@ -19,7 +19,7 @@
 				<% images = d.images(d.id)
 					if !images.nil? && images.size>0 
 						images.each do |image|%>
-						<img class="round thumbnail" src="/images/<%=image.name%>"></img>&nbsp;
+						<img class="round thumbnail" src=<%="/images/#{image.name}"%>></img>&nbsp;
 						<%end%>
 					<%end%>
 			</p>
