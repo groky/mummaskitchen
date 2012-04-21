@@ -29,9 +29,8 @@ Mummaskitchen::Application.routes.draw do
   #the photos
   resources :photos, :controller=>'photos'
   match "photos/add/:dish_id", :to=>"photos#add"
-  get "photos/add"
-  get "photos/update"
-  get "photos/index"
+  match "photos/add", :to=>"photos#add"
+
   #the dish stuff
   resources :dish, :controller=>'dish'
   

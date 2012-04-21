@@ -3,6 +3,6 @@
 	<ul>
 		<li><%= link_to "Menu", :controller=>"admin", :action=>"menu"%></li>
 		<li><%= link_to "Dishes", :controller=>"admin", :action=>"dishes"%></li>
-		<li><%= link_to "Photos", :controller=>"admin", :action=>"upload"%></li>
+		<li><%= link_to "Photos", :controller=>:photos, :action=>:add%></li>
 	</ul>
 <%end%>

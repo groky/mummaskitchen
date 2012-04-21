@@ -124,8 +124,9 @@ class AdminController < ApplicationController
     end
   end
   
-  def upload
-  end
+  #def upload
+  #  redirect_to :controller=>:photos, :action=>:add
+  #end
   
   def signout
     #create a signout action at admin_helper

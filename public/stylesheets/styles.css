@@ -50,6 +50,9 @@ div.body{
 }
 
 div.main-content {
+	color: #1947A3;
+	text-shadow: 3px 3px 5px #fff;
+	-moz-text-shadow:3px 3px 5px #fff;
 	padding-left: 30px;
 	font-size: 15px;
 	width: 670px;
@@ -208,12 +211,6 @@ div.top-nav ul li{
 	background: #f4f4f2;
 	opacity: 0.8;
 	outline: 1px 1px #fff;
-}
-
-div.main-content {
-	color: #fff;
-	text-shadow: 3px 3px 5px #000;
-	-moz-text-shadow:3px 3px 5px #000;
 }
 
 span.signature {
