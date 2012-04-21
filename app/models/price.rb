@@ -25,8 +25,8 @@ class Price < ActiveRecord::Base
       
       price.dish_id=dish_id
       
-      price.size = ((i==0 || i==2) ? 1 : 2)
-      price.price = ((i==0 || i==2) ? 6 : 4)
+      price.size = ((i==0 || i==2) ? 2 : 1)
+      price.price = ((i==0 || i==2) ? 4 : 6)
       price.freezer = ((i==0 || i==1) ? true : false)
       price.quantity=0
       price.save
