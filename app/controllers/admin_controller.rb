@@ -29,7 +29,7 @@ class AdminController < ApplicationController
   end
 
   def add_menu_item
-    @menu = Menu.new if !params.present?
+    @menu = Menu.new
     
     if params[:menu].present? && params[:menu][:name].present?
       @menu=Menu.new(params[:menu])
