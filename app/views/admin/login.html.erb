@@ -1,4 +1,4 @@
-
+	<errors><%=params[:notice]%></errors>
 	<h1>Mumma's Kitchen Admin Login</h1>
 	<%=form_for url_for(:controller=>:admin, :action=>:login) do |f|%>
 	<%=f.label :email %><br/>

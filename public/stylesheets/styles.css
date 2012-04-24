@@ -61,7 +61,7 @@ div.title-box {
 	border-bottom: #fff 6px solid;
 	/*box-shadow: 2px 2px 2px 2px #c0c0c0;
 	-moz-box-shadow: 2px 2px 2px 2px #c0c0c0;*/
-	top: 50px;
+	/*top: 50px;*/
 	/*left: 1cm;*/
 }
 
@@ -95,7 +95,7 @@ div.bg-image{
 div.body{
 	position: relative;
 	height: 100%;
-	top: 3.5cm;	
+	top: 1cm;	
 }
 
 div.main-content {
@@ -136,7 +136,7 @@ img#bolognaise{
 
 div.blurb {
 	position: absolute;
-	top: -1.9cm;
+	top: -91px;
 	width: 256px;
 	left: 700px;
 	background: #f4f4f2;
@@ -185,7 +185,7 @@ div.basket{
 
 div.top-nav {
 	position: relative;
-	top: 110px;
+	top: 10px;
 }
 
 div.top-nav ul li{

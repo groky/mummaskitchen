@@ -2,11 +2,8 @@
 	<%=flash[:notice] if @flash.nil? && flash[:notice].present? %>
 </errors>
 <h1><%= @header %></h1>
-<% if @dishes.nil? %>
-	<p>
-		Whoops! I must've forgotten the stuff for the menu....
-	</p>
-<% else %>
+<% if !@dishes.nil? %>
+
 <%=will_paginate @dishes%>
 <table>
 	

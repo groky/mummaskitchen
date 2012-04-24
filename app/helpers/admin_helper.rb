@@ -26,7 +26,7 @@ module AdminHelper
   end
 
   def deny_access
-    redirect_to admin_path, :notice => "Please login to access this page."
+    redirect_to :controller=>:admin, :action=>:login, :notice => "Please login to access this page."
   end
   
   def logout
@@ -43,7 +43,7 @@ module AdminHelper
     end
 
     def remember_token
-      cookies.signed[:remember_token] || [nil]
+      cookies.signed[:remember_token].nil? ? nil : cookies.signed[:remember_token]
     end
     
     def kill

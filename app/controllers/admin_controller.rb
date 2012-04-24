@@ -2,6 +2,8 @@ class AdminController < ApplicationController
   
   include AdminHelper
   
+  before_filter :authorise, :only=>:all, :except=>:login 
+  
   def login
     
     #render :tablet if signed_in?
@@ -133,5 +135,10 @@ class AdminController < ApplicationController
     logout
     redirect_to :controller=>:home, :action=>:index
   end
+  
+  private
+    def authorise
+      deny_access unless signed_in?
+    end
 
 end

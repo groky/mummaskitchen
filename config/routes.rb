@@ -27,26 +27,22 @@ Mummaskitchen::Application.routes.draw do
   root :to => "home#index"
 
   #the photos
-  resources :photos, :controller=>'photos'
   match "photos/add/:dish_id", :to=>"photos#add"
   match "photos/add", :to=>"photos#add"
+  resources :photos
 
   #the dish stuff
-  resources :dish, :controller=>'dish'
-  
   match 'dish/dish/:id', :to => 'dish#dish'
   match 'dish/dishes/:menu_id/:freezer', :to => 'dish#dishes'
   match 'dish/index', :to => 'dish#index'
-
+  resources :dish
 
   #the menu stuff
-  resources :menu, :controller => 'menu'
-  
-  match 'menu', :to=>'menu#index'
+  #match 'menu', :to=>'menu#index'
+  match '/menu/:freezer', :controller=>:menu, :action=>:index
+  resources :menu
   
   #the session stuff
-  resources :session, :controller => 'session'
-  
   match "session/new", :to => "session#new"
   match "session/add/:menu_id/:dish_id/:id", :to => "session#add"
   match "takeaway", :to => "session#takeaway"
@@ -54,17 +50,18 @@ Mummaskitchen::Application.routes.draw do
   match "session/update/:menu_id/:dish_id/:id", :to => "session#update_items"
   get "session/create"
   get "session/destroy"
+  resources :session
 
-  #the customer stuff
-  resources :customer, :controller => 'customer'
-  resources :customerorder
-  
+  #the customer stuff  
   match "register", :to => "customer#register"
   match "signin", :to => "customer#signin"
   match "customer/:id/complete", :to => "customer#complete"
   
   get "customer/order"
   get "customer/update"
+  
+  resources :customer
+  resources :customerorder
   
   # the home stuff
   match '/', :to => "home#index"
