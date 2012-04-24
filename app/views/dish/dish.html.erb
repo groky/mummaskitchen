@@ -8,23 +8,35 @@
 	$<%=currency(p.price) %> &nbsp;
 
 <a href="/session/add/<%=@dish.menu_id %>/<%=p.dish_id %>/<%=p.id%>" class="plate">
-	Add to plate
+	<%if p.quantity > 0 %>
+		"Add to plate" 
+	<%else%>
+	 <errors>N/A</errors> 
+	<%end%>
 </a>
 
 	</li>
 <%end%>
 
-<% @dish.prices(@dish.id, 't').each do |p| %>
+<%	prices = @dish.prices(@dish.id, 't')
+	if !prices.nil? && prices.size > 0 %>
 <li><strong>From the Freezer</strong></li>
+<% prices.each do |p| %>
+
 <li>
 	<%= p.size==2 ? "Medium" : "Large" %> &nbsp;
 	$<%=currency(p.price) %> &nbsp;
 
 <a href="/session/add/<%=@dish.menu_id %>/<%=p.dish_id %>/<%=p.id%>" class="plate">
-	Add to plate
+	<%if p.quantity > 0 %>
+		"Add to plate" 
+	<%else%>
+	 <errors>N/A</errors> 
+	<%end%>
 </a>
 
 	</li>
+	<%end%>
 <%end%>
 	
 </ul>

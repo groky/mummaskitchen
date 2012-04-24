@@ -32,6 +32,10 @@ table{
 	width: 100%;
 }
 
+div.header{
+	width: 100%;
+}
+
 img {
 	border: 2px solid #fff;
 	height: 161px;
@@ -41,6 +45,51 @@ img {
 
 div.img {
 	margin: 4px 4px 4px 4px;
+}
+
+div.title-box {
+	position: relative;
+	text-align: center;
+	width: 914px;
+	font-size: 4em;
+	background: #eeece1;
+	/*padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;*/
+	border-top: #fff 6px solid;
+	border-bottom: #fff 6px solid;
+	/*box-shadow: 2px 2px 2px 2px #c0c0c0;
+	-moz-box-shadow: 2px 2px 2px 2px #c0c0c0;*/
+	top: 50px;
+	/*left: 1cm;*/
+}
+
+
+span.title, span.box-header, li a, a{
+	/*color:  #524735;*/
+	color: #000;
+}
+
+span.title{
+	word-wrap: none;
+	text-shadow: 3px 3px 5px #000;
+	-moz-text-shadow:3px 3px 5px #000;
+}
+
+li a{
+	text-shadow: 3px 3px 5px #f1e9d2, 1px 1px 3px #ccc;
+	-moz-text-shadow:3px 3px 5px #f1e9d2, 1px 1px 3px #ccc;;
+}
+
+div.bg-image{
+	position: absolute;
+	background: #fff url('../images/mumma-bw.png') top center no-repeat;
+	opacity: 0.4;
+	z-index: -2;
+	width: 910px;
+	height: 1190px;
+	border: 2px #fff solid;
 }
 
 div.body{
@@ -132,60 +181,6 @@ div.basket{
 	font-size: 14px;
 	box-shadow: 3px 3px 5px #000;
 	-moz-box-shadow:3px 3px 5px #000;
-}
-
-div.gardenia {
-	position: absolute;
-	top: 1.5em;
-	height: 300px;
-	width: 440px;
-	right: -4cm;
-	/*background: #fff url('../images/gardenia.png') top left no-repeat;*/
-}
-
-span.title-box {
-	position: relative;
-	/*font-family: Phyllis,'Easy Street EPS',cursive;*/
-	/*font-family: 'Ruthie', cursive;*/
-	font-size: 6em;
-	background-color: #eeece1;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	border: #fff 6px solid;
-	box-shadow: 2px 2px 2px 2px #c0c0c0;
-	-moz-box-shadow: 2px 2px 2px 2px #c0c0c0;
-	top: 50px;
-	left: 1cm;
-}
-
-
-span.title, span.box-header, li a, a{
-	/*color:  #524735;*/
-	color: #000;
-}
-
-span.title{
-	width: 700px;
-	word-wrap: none;
-	text-shadow: 3px 3px 5px #000;
-	-moz-text-shadow:3px 3px 5px #000;
-}
-
-li a{
-	text-shadow: 3px 3px 5px #f1e9d2, 1px 1px 3px #ccc;
-	-moz-text-shadow:3px 3px 5px #f1e9d2, 1px 1px 3px #ccc;;
-}
-
-div.bg-image{
-	position: absolute;
-	background: #fff url('../images/mumma-bw.png') top center no-repeat;
-	opacity: 0.4;
-	z-index: -2;
-	width: 910px;
-	height: 1190px;
-	border: 2px #fff solid;
 }
 
 div.top-nav {
