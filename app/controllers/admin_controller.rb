@@ -136,6 +136,16 @@ class AdminController < ApplicationController
     redirect_to :controller=>:home, :action=>:index
   end
   
+  def edit_home
+    @comment = !Comment.last ? Comment.new : Comment.last
+    
+    if params[:comment]
+      @comment = Comment.new(params[:comment])
+      @comment.save
+    end
+    
+  end
+  
   private
     def authorise
       deny_access unless signed_in?

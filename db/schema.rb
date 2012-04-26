@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120419005518) do
+ActiveRecord::Schema.define(:version => 20120426223626) do
+
+  create_table "comments", :force => true do |t|
+    t.string   "detail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "customer_orders", :force => true do |t|
     t.integer  "customer_id"

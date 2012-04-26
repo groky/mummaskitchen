@@ -1,6 +1,8 @@
 Mummaskitchen::Application.routes.draw do
 
   #the cms
+  match "admin/edit_home", :to=>"admin#edit_home" 
+  
   match "admin", :to=>"admin#login"
   match "admin/menu", :to=>"admin#menu"
   match "admin/ami", :to=>"admin#add_menu_item"

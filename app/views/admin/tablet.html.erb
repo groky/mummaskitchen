@@ -1,6 +1,7 @@
 <% if signed_in? %>
 	<%=render 'shared/admin/nav_header'%>
 	<ul>
+		<li><%= link_to "Home", :controller=>:admin, :action=>:edit_home %></li>
 		<li><%= link_to "Menu", :controller=>"admin", :action=>"menu"%></li>
 		<li><%= link_to "Dishes", :controller=>"admin", :action=>"dishes"%></li>
 		<li><%= link_to "Photos", photos_add_path %></li>
