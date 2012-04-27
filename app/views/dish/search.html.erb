@@ -1,0 +1,5 @@
+<%if @dishes.nil?%>
+	<errors>There were no matches for your search criteria</errors>
+<%else%>
+	<%=render 'shared/dishes'%>
+<%end%>
