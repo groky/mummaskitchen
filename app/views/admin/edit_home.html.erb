@@ -1,0 +1,7 @@
+<% if signed_in?%>
+	<%=form_for @comment, :url=>{:controller=>:admin, :action=>:edit_home} do |f|%>
+		<%= f.label :detail%>
+		<%= f.tinymce :detail%>
+		<%=f.submit "Save Home Page"%>
+	<%end%>
+<%end%>
