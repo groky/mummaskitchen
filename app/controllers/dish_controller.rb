@@ -14,4 +14,8 @@ class DishController < ApplicationController
     @dish = Dish.find(params[:id])
   end
   
+  def search
+    @dishes = params[:like].present? ? Dish.search(params[:like], params[:page]) : nil
+  end
+  
 end

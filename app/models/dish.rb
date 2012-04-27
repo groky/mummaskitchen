@@ -12,10 +12,12 @@ class Dish < ActiveRecord::Base
         if !menu_id.nil?
           dishes = find :all,
                     :select=>"DISTINCT \"dishes\".*",  
-                    :conditions=>"menu_id=#{menu_id}"
+                    :conditions=>"menu_id=#{menu_id}",
+                    :order=>"id DESC"
         else
           dishes = find :all,
-                    :select=>"DISTINCT \"dishes\".*"          
+                    :select=>"DISTINCT \"dishes\".*",
+                    :order=>"id DESC"     
         end
         
        dishes.paginate  :per_page=>8, :page=>page 
@@ -26,7 +28,8 @@ class Dish < ActiveRecord::Base
   def self.freezer(menu_id, freezer, page)
     dishes = find :all, :select=>"DISTINCT \"dishes\".*", 
                   :joins=>:prices, 
-                  :conditions=>"menu_id=#{menu_id} and freezer='#{freezer}'"
+                  :conditions=>"menu_id=#{menu_id} and freezer='#{freezer}'",
+                  :order=>"id DESC"
     
     dishes.paginate :per_page=>5, :page=>page
 
@@ -37,7 +40,7 @@ class Dish < ActiveRecord::Base
     dishes = find :all, :select=>"DISTINCT \"dishes\".*", 
                   :joins=>:prices,
                   :conditions=>"freezer='t'",
-                  :order=>"menu_id, dish_id"
+                  :order=>"menu_id, dish_id DESC"
     
     dishes.paginate :per_page=>5, :page=>page
           
@@ -47,6 +50,13 @@ class Dish < ActiveRecord::Base
     Photos.find_all_by_dish_id(dish_id)
   end
   
+  def self.search(like, page)
+    dishes = find :all,
+              :select=>"DISTINCT \"dishes\".*",
+              :conditions=>"name like '%#{like}%'",
+              :order=>"id DESC"
+    dishes.paginate :per_page=>5, :page=>page
+  end
   
   
 end
