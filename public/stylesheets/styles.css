@@ -105,6 +105,7 @@ div.main-content {
 	-moz-text-shadow:3px 3px 5px #fff;
 	padding-left: 30px;
 	font-size: 15px;
+	font-weight: bold;
 	width: 670px;
 	line-height: 30px;
 }
@@ -255,7 +256,7 @@ div.search-box{
 	background-color: rgba(0,0,0, 0.2);
 }
 
-div.item-head{
+.item-head{
 	position: relative;
 	top: -3px;
 	left: -13px;
@@ -264,7 +265,19 @@ div.item-head{
 	
 }
 
-div.item-head span{
+ul.menus li{
+	display: inline;
+	float: left;
+}
+
+.menu-boxes{
+	position: relative;
+	width: 300px;
+	display: block;	
+}
+
+
+.item-head span{
 	margin-left: 10px;
 }
 

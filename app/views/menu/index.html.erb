@@ -2,13 +2,30 @@
 
 <% if @menu.nil? %>
 	<p>
-		Whoops! I must've forgotten the stuff for the menu....
+		Whoops! I must've forgotten to load the menu....
 	</p>
 <% else %>
-
-<ul>
-	<% @menu.each do |m| %>
-	<li><p><%= link_to m.name, "/dish/dishes/#{m.id}/#{@freezer}" %><br/><small><%=m.description%></small></p></li>
+<ul class="menus">
+	<% @menu.each do |m|%>
+		<li><!-- start box -->
+		<div class="box round menu-boxes">
+			<table>
+			<tr>
+				<td class="item-head round-top"colspan="3"><span><%= link_to m.name, "/dish/dishes/#{m.id}/#{@freezer}" %></span></td>
+			</tr>
+			<tr>	
+				<td colspan="3"><small><%=m.description%></small></td>
+			</tr>
+			<tr>
+				<%images = m.images(m.id)
+					images.each do |i|%>
+					<td><img class="round thumbnail" src="/images/<%=i.name%>"></img></td>
+				<%end%>
+			</tr>
+			</table>
+		</div>
+	<!-- end box -->
+	</li>
 	<%end%>
 </ul>
 <%end%>
