@@ -6,6 +6,6 @@ class Photos < ActiveRecord::Base
                 :select=>"DISTINCT \"photos\".* ", 
                 :joins=>:dish, 
                 :conditions=>"menu_id=#{menu_id}", 
-                :order=>"photos.created_at DESC LIMIT 3")
+                :order=>"RANDOM() LIMIT 3")
   end
 end
