@@ -69,18 +69,18 @@ div.title-box {
 
 span.title, span.box-header, li a, a{
 	/*color:  #524735;*/
-	color: #000;
+	color: #fff;
 }
 
 span.title{
 	word-wrap: none;
-	text-shadow: 3px 3px 5px #000;
-	-moz-text-shadow:3px 3px 5px #000;
+	text-shadow: 3px 3px 5px #fff;
+	-moz-text-shadow:3px 3px 5px #fff;
 }
 
 li a{
-	text-shadow: 3px 3px 5px #f1e9d2, 1px 1px 3px #ccc;
-	-moz-text-shadow:3px 3px 5px #f1e9d2, 1px 1px 3px #ccc;;
+	text-shadow: 3px 3px 5px #f1e9d2, 1px 1px 3px #000;
+	-moz-text-shadow:3px 3px 5px #f1e9d2, 1px 1px 3px #000;;
 }
 
 div.bg-image{
@@ -100,7 +100,7 @@ div.body{
 }
 
 div.main-content {
-	color: #1947A3;
+	color: #000;
 	text-shadow: 3px 3px 5px #fff;
 	-moz-text-shadow:3px 3px 5px #fff;
 	padding-left: 30px;
@@ -141,7 +141,7 @@ div.blurb {
 	top: -91px;
 	width: 256px;
 	left: 700px;
-	background: #f4f4f2;
+	/*background: #f4f4f2;*/
 	padding: 10px;
 	opacity: 0.8;
 	border: 2px solid #fff;
@@ -178,11 +178,11 @@ div.basket{
 .checkout-button{
 	margin-top: 15px;
 	padding: 5px 5px 5px 5px;
-	background: #fff;
+	background: #000;
 	opacity: none;
 	font-size: 14px;
-	box-shadow: 3px 3px 5px #000;
-	-moz-box-shadow:3px 3px 5px #000;
+	box-shadow: 3px 3px 5px #fff;
+	-moz-box-shadow:3px 3px 5px #fff;
 }
 
 div.top-nav {
