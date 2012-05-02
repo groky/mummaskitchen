@@ -1,5 +1,7 @@
-<h1><%=@dish.name%></h1>
+<div class="round box">
+<h1><%=@header%></h1>
 <p><%=@dish.description%></p>
+
 <ul>
 	
 <% @dish.prices(@dish.id, 'f').each do |p| %>
@@ -40,9 +42,13 @@
 <%end%>
 	
 </ul>
+
+	<div class="single-item-display">
 <%images = @dish.images(@dish.id)
 	if !images.nil? && images.size>0
 		images.each do |image|%>
 		<img class="round display" src="/images/<%=image.name%>"></img>
 		<%end%>
 	<%end%>
+	</div>
+</div>

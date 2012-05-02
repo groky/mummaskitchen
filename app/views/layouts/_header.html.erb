@@ -1,8 +1,8 @@
 <div class="top-nav">
 	<ul>
-		<li><%=link_to "Home", "/", :class=>"round" %></li>
-		<li><%=link_to "On the Menu", "/menu/f", :class=>"round" %></li>
-		<li><%=link_to "In the Freezer", "/menu/t", :class=>"round" %></li>
-		<li><%=link_to "Contact Mumma", "/contact", :class=>"round" %></li>
+		<li><%=link_to "Home", "/", :class=>"round top-nav-bg", :id=>"home" %></li>
+		<li><%=link_to "On the Menu", "/menu/f", :class=>"round top-nav-bg", :id=>"fresh", :onclick=>"changeto(1)" %></li>
+		<li><%=link_to "In the Freezer", "/menu/t", :class=>"round top-nav-bg", :id=>"freezer", :onclick=>"changeto(2)" %></li>
+		<li><%=link_to "Contact Mumma", "/contact", :class=>"round top-nav-bg", :id=>"contact" %></li>
 	</ul>
 </div>

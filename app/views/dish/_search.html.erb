@@ -1,5 +1,4 @@
-<form action="search" method="post">
-	<input type="text" class="search round" name="like" />
-	<input type="submit" value="search" />
-	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-</form>
+<%=form_for :dish, :url=>{:controller=>:dish, :action=>:search} do |f|%>
+	<input type="text" name="search" class="search round" />
+	<%=f.submit "search"%>
+<%end%>

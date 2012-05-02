@@ -9,8 +9,10 @@ Tinymce::Hammer.init = [
   [:theme, 'advanced'],
   [:theme_advanced_toolbar_align, 'left'],
   [:theme_advanced_toolbar_location, 'top'],
-  [:theme_advanced_buttons1, 'undo,redo,cut,copy,paste,pastetext,|,bold,italic,strikethrough,blockquote,charmap,bullist,numlist,removeformat,|,link,unlink,image,|,cleanup,code'],
-  [:theme_advanced_buttons2, ''],
-  [:theme_advanced_buttons3, ''],
+  [:theme_advanced_buttons1, 'undo,redo,cut,copy,paste,pastetext,|,bold,italic,underline,strikethrough,blockquote,charmap,bullist,numlist,removeformat,|,link,unlink,image,|,cleanup,code'],
+  [:theme_advanced_buttons2, 'pasteword,|,search,replace,|,tablecontrols,|,justifyleft,justifycenter,jus tifyright,justifyfull'],
+  [:theme_advanced_buttons3, 'styleselect,formatselect,fontselect,fontsizeselect'],
   [:valid_elements, "a[href|title],blockquote[cite],br,caption,cite,code,dl,dt,dd,em,i,img[src|alt|title|width|height|align],li,ol,p,pre,q[cite],small,strike,strong/b,sub,sup,u,ul"],
+  [:width, '650'],
+  [:height, '900'],
 ]

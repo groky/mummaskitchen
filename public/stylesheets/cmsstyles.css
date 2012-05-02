@@ -14,3 +14,10 @@ span.cms-menu{
 small{
 	font-size: 12px;
 }
+
+div.imagetab{
+	position: relative;
+	overflow-y: scroll;
+	height: 100%;
+	
+}

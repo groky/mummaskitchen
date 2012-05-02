@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @title = "Home"
+    @page = Comment.last
   end
 
   def about
@@ -15,9 +16,9 @@ class HomeController < ApplicationController
     @title = "Menu"
   end
   
-  def freezer
-    @title = @header = "Freezer"
-    @where = 't' # true for being in the freezer
-    @dishes = Dish.freezerall(params[:page])
-  end
+  #def freezer
+  #  @title = @header = "Freezer"
+  #  @where = 't' # true for being in the freezer
+  #  @dishes = Dish.freezerall(params[:page])
+  #end
 end

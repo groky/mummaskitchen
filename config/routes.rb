@@ -37,7 +37,7 @@ Mummaskitchen::Application.routes.draw do
   match 'dish/dish/:id', :to => 'dish#dish'
   match 'dish/dishes/:menu_id/:freezer', :to => 'dish#dishes'
   match 'dish/index', :to => 'dish#index'
-  match 'search/:like', :to =>"dish#search"
+  match 'search/:search', :to =>"dish#search"
   match 'search', :to =>"dish#search"
   resources :dish
 

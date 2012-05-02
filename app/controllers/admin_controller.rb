@@ -146,6 +146,10 @@ class AdminController < ApplicationController
     
   end
   
+  def load_images
+    @images = Images.all
+  end
+  
   private
     def authorise
       deny_access unless signed_in?

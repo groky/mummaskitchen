@@ -4,14 +4,22 @@
 <h1><%= @header %></h1>
 <% if !@dishes.nil? %>
 
-<%=will_paginate @dishes%>
-<table>
+<%=will_paginate @dishes, :params=>{:search=>@search}%>
+<ul>
 	
 	<% @dishes.each do |d| %>
-	<tr>
-		<td>
-			<p>
-				<%= link_to d.name, "/dish/dish/#{d.id}" %><br />
+	<li class="box round">
+		<table width="670px">
+			<tr class="round-top">
+				<td colspan="7">
+					<div class="item-head">
+						<span><%= link_to d.name, "/dish/dish/#{d.id}" %></span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+			<td>
+			<span>
 				<small><%=truncate d.description%></small> <br />
 				<% images = d.images(d.id)
 					if !images.nil? && images.size>0 
@@ -19,26 +27,26 @@
 						<img class="round thumbnail" src="<%="/images/#{image.name}"%>"></img>&nbsp;
 						<%end%>
 					<%end%>
-			</p>
-		</td>
+			</span>
+		 	</td>
 
 		<% d.prices(d.id, @where).each do |p| %>
-
 			<td><%= p.size==2 ? "Medium" : "Large" %></td>
 			<td>$<%=currency(p.price) %></td>
 			<td class="add">
 				<a href="/session/add/<%=d.menu_id %>/<%=p.dish_id %>/<%=p.id%>" class="plate">
 					<% if p.quantity==0 %>
-						<errors>N/A</errors>
+					<errors>N/A</errors>
 					<%else%>
 						Add to plate
 					<%end%>
 				</a>
 			</td>
-				
 		<%end%>
-	</tr>
+		</tr>
+		</table>
+	</li>
 	<%end%>
-</table>
+</ul>
 <%=will_paginate @dishes%>
 <%end%>

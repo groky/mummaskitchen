@@ -28,8 +28,8 @@ class Dish < ActiveRecord::Base
   def self.freezer(menu_id, freezer, page)
     dishes = find :all, :select=>"DISTINCT \"dishes\".*", 
                   :joins=>:prices, 
-                  :conditions=>"menu_id=#{menu_id} and freezer='#{freezer}'",
-                  :order=>"id DESC"
+                  :conditions=>"prices.quantity > 0 and menu_id=#{menu_id} and freezer='#{freezer}'",
+                  :order=>"prices.quantity DESC, id DESC"
     
     dishes.paginate :per_page=>5, :page=>page
 
@@ -53,7 +53,7 @@ class Dish < ActiveRecord::Base
   def self.search(like, page)
     dishes = find :all,
               :select=>"DISTINCT \"dishes\".*",
-              :conditions=>"name like '%#{like}%'",
+              :conditions=>['name like ?', "%#{like}%"],
               :order=>"id DESC"
     dishes.paginate :per_page=>5, :page=>page
   end
