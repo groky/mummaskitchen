@@ -2,7 +2,7 @@ class AdminController < ApplicationController
   
   include AdminHelper
   
-  before_filter :authorise, :only=>:all, :except=>:login 
+  before_filter :authorise, :only=>:all, :except=>:login
   
   def login
     

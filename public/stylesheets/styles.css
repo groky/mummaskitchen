@@ -51,19 +51,16 @@ div.img {
 div.title-box {
 	position: relative;
 	text-align: center;
+	text-outline-style: inherit;
+	-webkit-text-stroke-color: #fff;
+	-webkit-text-stroke-width: 2px;
 	width: 914px;
 	font-size: 4em;
-	background: #eeece1;
-	/*padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 10px;
-	padding-bottom: 10px;*/
+	background-color: rgb(173, 255, 47);
+	background-color: rgba(173, 250, 47, 0.6);
+	/*background: #eeece1;*/
 	border-top: #fff 6px solid;
 	border-bottom: #fff 6px solid;
-	/*box-shadow: 2px 2px 2px 2px #c0c0c0;
-	-moz-box-shadow: 2px 2px 2px 2px #c0c0c0;*/
-	/*top: 50px;*/
-	/*left: 1cm;*/
 }
 
 
@@ -78,9 +75,14 @@ span.title{
 	-moz-text-shadow:3px 3px 5px #fff;
 }
 
+.content-links{
+	text-shadow: 3px 3px 5px #000;
+	-moz-text-shadow:3px 3px 5px #000;	
+}
+
 li a{
-	text-shadow: 3px 3px 5px #f1e9d2, 1px 1px 3px #000;
-	-moz-text-shadow:3px 3px 5px #f1e9d2, 1px 1px 3px #000;;
+	text-shadow: 3px 3px 5px #000, 1px 1px 3px #fff;
+	-moz-text-shadow:3px 3px 5px #000, 1px 1px 3px #fff;;
 }
 
 div.bg-image{
@@ -143,15 +145,15 @@ div.blurb {
 	left: 700px;
 	/*background: #f4f4f2;*/
 	padding: 10px;
-	opacity: 0.8;
+	/*opacity: 0.8;*/
 	border: 2px solid #fff;
 }
 
 div.blurb span{
 	font-size: 20px;
 	color: #000;
-	text-shadow: 3px 3px 5px #C8C8C8;
-	-moz-text-shadow:3px 3px 5px #C8C8C8;
+	text-shadow: 3px 3px 5px #fff;
+	-moz-text-shadow:3px 3px 5px #fff;
 }
 
 a, a:visited, a:hover{
@@ -179,7 +181,7 @@ div.basket{
 	margin-top: 15px;
 	padding: 5px 5px 5px 5px;
 	background: #000;
-	opacity: none;
+	/*opacity: none;*/
 	font-size: 14px;
 	box-shadow: 3px 3px 5px #fff;
 	-moz-box-shadow:3px 3px 5px #fff;
@@ -206,7 +208,7 @@ div.top-nav ul li{
 	word-wrap: auto;
 	/*background: #f6f4ea;*/
 	/*background: #f4f4f2;*/
-	opacity: 0.8;
+	/*opacity: 0.8;*/
 	outline: 1px 1px #fff;
 }
 

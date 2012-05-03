@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426223626) do
+ActiveRecord::Schema.define(:version => 20120503035459) do
 
   create_table "comments", :force => true do |t|
     t.string   "detail"
@@ -19,12 +19,13 @@ ActiveRecord::Schema.define(:version => 20120426223626) do
   end
 
   create_table "customer_orders", :force => true do |t|
-    t.integer  "customer_id"
+    t.integer  "order_id"
     t.integer  "dish_id"
     t.integer  "price_id"
     t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "thaw",       :default => false
   end
 
   create_table "customers", :force => true do |t|
@@ -51,6 +52,13 @@ ActiveRecord::Schema.define(:version => 20120426223626) do
   create_table "menus", :force => true do |t|
     t.string   "name"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "customer_id"
+    t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -58,8 +58,9 @@ Mummaskitchen::Application.routes.draw do
 
   #the customer stuff  
   match "register", :to => "customer#register"
-  match "signin", :to => "customer#signin"
-  match "customer/:id/complete", :to => "customer#complete"
+  match "signin", :to => "customer#login"
+  match "process", :to => "customer#complete"
+  match "customer/finished", :to => "customer#finished"
   
   get "customer/order"
   get "customer/update"

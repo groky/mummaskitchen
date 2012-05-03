@@ -3,10 +3,12 @@ class CustomerMailer < ActionMailer::Base
   helper :session
   default :from => 'mumma@mummaskitchen.net'
   
-  def order_confirmation(customer, order, not_ordered)
+  def order_confirmation(customer, order, not_ordered, defrosts, comment)
     @customer = customer
     @order = order
     @unorder = not_ordered
+    @defrosts = defrosts
+    @comment = comment
     
     mail(:to=>@customer.email, :subject=>"Order confirmation", :bcc=>'mumma@mummaskitchen.net', :content_type=>"text/html")
     

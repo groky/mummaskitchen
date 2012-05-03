@@ -23,6 +23,7 @@
 			<td><%=item.name(item.dish_id)%></td>
 			<td><%=item.quantity%> X <%=Price.sizew(item.id)%></td>
 			<td>$<%=currency(item.price)%> ea</td>
+			<td />
 			<%total+= (item.price * item.quantity)%>
 		</tr>
 		<%end
@@ -47,6 +48,13 @@
 			<td><%=item.name(item.dish_id)%></td>
 			<td><%=item.quantity%> X <%=Price.sizew(item.id)%></td>
 			<td>$<%=currency(item.price)%> ea</td>
+			<td>
+				<%@defrosts.select do |key, val|%>
+					<%if key.to_i==item.id%>
+						<%=val=='on'? "defrost" : ""%>
+					<%end%>	
+				<%end%>
+			</td>
 			<%total+= (item.price * item.quantity)%>
 		</tr>
 		<%end
@@ -71,5 +79,8 @@
 		<%end%>
 	</table>	
 	<%end%>
+	<p>Comments <br />
+	<%=@comment%>
+	</p>
 </body>
 </html>

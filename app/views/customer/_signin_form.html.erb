@@ -1,7 +1,6 @@
 <div class="signin">
-	<h3>Already registered? Sign in here</h3>
 	<div class="errors"></div>
-	<%=form_for @customer, :url=>{:controller=>:customer, :action=>:signin} do |f|%>
+	<%=form_for @customer, :url=>{:controller=>:customer, :action=>:login} do |f|%>
 	<%= render 'shared/errors', :object=>f.object %>
 	<table>
 			<tr>
@@ -14,7 +13,7 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><%=f.submit "Get it sorted"%></td>
+				<td><%=f.submit "Sign in"%></td>
 			</tr>		
 	</table>
 	<%end%>

@@ -1,0 +1,6 @@
+#add to mummaskitchen repo at webfaction
+git push mummaskitchen
+
+#connect to webfaction
+sh /usr/bin/webfaction
+

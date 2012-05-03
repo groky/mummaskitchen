@@ -1,7 +1,8 @@
 class SessionController < ApplicationController
   
-  before_filter :start_session
+  include AdminHelper
   
+  before_filter :start_session
   def new
     @title = "Login"
   end
@@ -43,8 +44,12 @@ class SessionController < ApplicationController
   end
 
   def takeaway
-    @title = @header = "Take Away - Preview"
-    @customer ||= Customer.new
+    if signed_in?
+      @title = @header = "Take Away - Preview"
+      @customer ||= current_user
+    else
+      redirect_to :controller=>:customer, :action=>:signin
+    end
   end
 
 private

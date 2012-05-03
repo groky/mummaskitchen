@@ -1,6 +1,5 @@
 module SessionHelper
   
-
   def initialise
     
     #cookies.permanent.signed[:remember_token] = nil

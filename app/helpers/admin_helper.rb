@@ -2,27 +2,27 @@ module AdminHelper
   
   def signin(admin)
     cookies.permanent.signed[:remember_token] = admin.id
-    self.current_admin = admin
+    self.current_user = admin
   end
   
   def signed_in?
-    !current_admin.nil?
+    !current_user.nil?
   end
   
   def is_admin?(customer)
     customer.admin
   end
   
-  def current_admin=(admin)
-    @current_admin=admin
+  def current_user=(user)
+    @current_user=user
   end
   
-  def current_admin
-    @current_admin ||= admin_from_remember_token
+  def current_user
+    @current_user ||= user_from_remember_token
   end
 
-  def current_admin?(admin)
-    admin==current_admin
+  def current_user?(user)
+    user==current_user
   end
 
   def deny_access
@@ -35,10 +35,10 @@ module AdminHelper
   
   private 
   
-    def admin_from_remember_token
+    def user_from_remember_token
       if remember_token.present? && !remember_token.nil?
-        admin = Customer.find(remember_token)
-        Customer.authenticate(admin.email, admin.phone)
+        user = Customer.find(remember_token)
+        Customer.authenticate(user.email, user.phone)
       end
     end
 
