@@ -24,7 +24,8 @@ module SessionHelper
           :price=>price.price,
           :size=>price.size, 
           :freezer=>price.freezer,
-          :quantity=>1 
+          :quantity=>1,
+          :defrost=>false 
       }
     
       session[:basket] << item

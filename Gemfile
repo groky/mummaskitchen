@@ -9,6 +9,7 @@ gem 'rails', '3.0.1'
  gem 'will_paginate', '3.0.pre2'
  # gem 'kaminari', '0.13.0'
  gem 'tinymce_hammer', '0.2.2'
+ gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'

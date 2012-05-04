@@ -139,10 +139,10 @@ class AdminController < ApplicationController
   def edit_home
     @comment = !Comment.last ? Comment.new : Comment.last
     
-    if params[:comment]
-      @comment = Comment.new(params[:comment])
-      @comment.save
-    end
+    #if params[:comment]
+    #  @comment = Comment.new(params[:comment])
+    #  @comment.save
+    #end
     
   end
   
