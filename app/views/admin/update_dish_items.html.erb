@@ -1,7 +1,6 @@
-<%if signed_in?%>
+
 	<%=render 'shared/admin/nav_header'%>
 	<h1>Update items for <%=@dish.name%></h1>
 	<%=form_for @price, :url=>{:controller=>:admin, :action=>:update_dish_items} do |f|%>
 		<%=render 'shared/admin/dish_item'%>
 	<%end%>
-<%end%>

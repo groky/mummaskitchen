@@ -1,4 +1,4 @@
-<%if signed_in?%>
+
 <%=render 'shared/admin/nav_header'%>
 <h1>Items for <%=@dish.name%></h1>
 
@@ -32,4 +32,3 @@
 	<%end%>
 </table>
 <%=link_to "Add dish item", :controller=>:admin, :action=>:add_dish_items, 'dish_id'=>@dish.id%>
-<%end%>

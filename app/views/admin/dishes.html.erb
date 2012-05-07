@@ -1,5 +1,4 @@
 
-<%if signed_in?%>
 <%=render 'shared/admin/nav_header'%>
 <h1>Administer Dishes</h1>
 	
@@ -35,4 +34,4 @@
 		There are no dishes
 	<%end%>
 	<%=link_to "Add dish", :controller=>:admin, :action=>:add_dish%>
-<%end%>
+

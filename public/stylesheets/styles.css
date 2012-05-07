@@ -55,6 +55,7 @@ div.title-box {
 	-webkit-text-stroke-color: #fff;
 	-webkit-text-stroke-width: 2px;
 	width: 914px;
+	font-weight: 900;
 	font-size: 4em;
 	background-color: rgb(173, 255, 47);
 	background-color: rgba(173, 250, 47, 0.6);
@@ -289,15 +290,25 @@ div.login{
 }
 
 div.footer{
-	position: relative;
-	width: 520px;
+	position: absolute;
+	margin-top: 15px;
+	top: 1150px;
+	color: #8c8c8c;
+	font-size: 10px;
+	padding: 5px;
+	left: 400px;
+}
+img.tiny{
+	height: 15px;
+	width: 25px;
+	border:none;
 }
 
-div.footer span {
-	color: #8c8c8c;
-	font-size: 20px;
-	padding: 5px;
-	
+div.footer ul li{
+	display: inline;
+	float: left;
+	padding-left: 20px;
+	text-align: center;
 }
 
 .round-top,tr.round-top td div{

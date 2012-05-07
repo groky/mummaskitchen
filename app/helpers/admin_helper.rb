@@ -25,8 +25,12 @@ module AdminHelper
     user==current_user
   end
 
+  def current_user_is_admin?
+    is_admin?(current_user)
+  end
+  
   def deny_access
-    redirect_to :controller=>:admin, :action=>:login, :notice => "Please login to access this page."
+    redirect_to admin_login_path, :notice => "Please login to access this page."
   end
   
   def logout

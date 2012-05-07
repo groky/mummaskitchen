@@ -1,7 +1,6 @@
-<% if signed_in?%>
+<%=render 'shared/admin/nav_header'%>
 	<%=form_for @comment, :url=>{:controller=>:admin, :action=>:edit_home} do |f|%>
-		<%= f.label :detail%>
-		<%= f.tinymce :detail, :width=>'670px'%>
+		<%= f.label :detail%> <%=link_to "Preview", admin_preview_path%>
+		<%= f.tinymce :detail%>
 		<%=f.submit "Save Home Page"%>
 	<%end%>
-<%end%>

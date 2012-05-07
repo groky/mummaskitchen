@@ -2,17 +2,14 @@ class AdminController < ApplicationController
   
   include AdminHelper
   
-  before_filter :authorise, :only=>:all, :except=>:login
+  before_filter :authorise, :except=>:login
   
   def login
-    
-    #render :tablet if signed_in?
-    
+    #render :tablet if signed_in?    
     @customer = Customer.new
     
-    if params['/admin'].present?
-      @customer = Customer.authenticate(params['/admin'][:email], params['/admin'][:phone])
-    
+    if params['/admin/login'].present?
+      @customer = Customer.authenticate(params['/admin/login'][:email], params['/admin/login'][:phone])   
       if !@customer.nil? && is_admin?(@customer)
         signin(@customer)  
         render :tablet
@@ -139,11 +136,16 @@ class AdminController < ApplicationController
   def edit_home
     @comment = !Comment.last ? Comment.new : Comment.last
     
-    #if params[:comment]
-    #  @comment = Comment.new(params[:comment])
-    #  @comment.save
-    #end
+    if params[:comment]
+      @comment = Comment.new(params[:comment])
+      #print @comment.detail
+      @comment.save
+    end
     
+  end
+  
+  def preview
+    @comment = Comment.last
   end
   
   def load_images
@@ -152,7 +154,7 @@ class AdminController < ApplicationController
   
   private
     def authorise
-      deny_access unless signed_in?
+      deny_access unless (signed_in? && current_user_is_admin?)
     end
 
 end

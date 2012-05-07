@@ -1,7 +1,6 @@
-<%if signed_in? %>
+
 	<%=render 'shared/admin/nav_header'%>
 	<h1>Update <%=@dish.name%></h1>
 	<%=form_for :dish, :url=>{:controller=>:admin, :action=>:update_dish}, :html=>{:multipart=>true} do |f|%>
 	<%=render 'dish_form'%>
 	<%end%>
-<%end%>

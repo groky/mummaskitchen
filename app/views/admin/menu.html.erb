@@ -1,4 +1,4 @@
-<% if signed_in? %>
+
 <%=render 'shared/admin/nav_header'%>
 <h1>Administer Menu Items</h1>
 
@@ -25,4 +25,3 @@
 There are no menu items to administer
 <%end%>
 <%=link_to "Add menu item", :controller=>:admin, :action=>:add_menu_item%>
-<%end%>

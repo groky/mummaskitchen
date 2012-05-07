@@ -1,5 +1,7 @@
-google.load('jquery', '1.7.2');
-
-$(document).ready(function(){
-
+$(function(){
+	$("#comment_submit").click(function(){
+		var el = document.getElementById('comment_detail')
+		alert(el.value);
+	});
 });
+

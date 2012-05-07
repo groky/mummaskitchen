@@ -1,6 +1,6 @@
 
-	<errors><%=params[:notice]%></errors>
-<%if !signed_in?%>
+	<errors><%=flash[:notice]%></errors>
+<%if !signed_in? || !current_user_is_admin?%>
 	<h1>Mumma's Kitchen Admin Login</h1>
 	<%=form_for url_for(:controller=>:admin, :action=>:login) do |f|%>
 	<%=f.label :email %><br/>
