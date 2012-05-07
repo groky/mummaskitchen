@@ -135,7 +135,7 @@ class AdminController < ApplicationController
   
   def edit_home
     @comment = !Comment.last ? Comment.new : Comment.last
-    
+    @hpeimages = Photos.all
     if params[:comment]
       @comment = Comment.new(params[:comment])
       #print @comment.detail

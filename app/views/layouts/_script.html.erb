@@ -1,12 +1,15 @@
 <div class="blurb round box">
 	<span>
-	<% if !items.nil? && items.size > 0 %>
-	 	<%= render 'layouts/basket_small' %>
+	<% 
+	if !items.nil? && items.size > 0 %>
+	<span><%=render 'layouts/basket_small'%></span>
+	<%elsif !@hpeimages.nil? && @hpeimages.size>0%>
+		<%=render 'shared/admin/images' %>
 	<%else%>
-	
+	<span>
 Welcome to Mumma’s kitchen. My inspiration in doing this comes from my own Mother and my father’s mother; both whom I refer to as “MUMMA”. <br />These women are known to have kind, generous hearts, an amazing ability to entertain and OVER cater! Hence how I come into it, since I too am an habitual ‘Over Caterer'.<br /> I had a thought one day; maybe I could “kill two birds with the one stone” and help out working families by plating up a reasonably priced home cooked meal whilst clearing my excess!! <br /><br />
 So, welcome, hope you enjoy and would love some feedback on how I could do more to assist you ease your cooking burden during your busy day!
-	
-	<%end%>
 	</span>
+	<%end%>
+	
 </div>

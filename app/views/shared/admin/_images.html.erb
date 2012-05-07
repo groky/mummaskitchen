@@ -1,0 +1,15 @@
+<table>
+<%counter=0
+@hpeimages.each do |i|%>
+	<%if counter==0%>
+	<tr>
+	<%elsif counter==3%>
+	</tr><tr>
+		<%counter=0%>
+	<%end%>
+	
+	<td><img class="thumbnail" src="../images/<%=i.name%>"></img></td>
+	<%counter+=1%>
+<%end%>
+</tr>
+</table>
