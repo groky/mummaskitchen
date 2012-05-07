@@ -150,6 +150,11 @@ div.blurb {
 	border: 2px solid #fff;
 }
 
+div.image-list{
+	height: 800px;
+	overflow-y: scroll;
+}
+
 div.blurb span{
 	font-size: 20px;
 	color: #000;
