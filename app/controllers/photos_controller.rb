@@ -7,7 +7,8 @@ class PhotosController < ApplicationController
     if params[:photos].present? && params[:photos][:name].present? #upload the file
       #upload params[:photos][:name]
       @photo = Photos.new(params[:photos])
-      if upload(@photo.name)
+      original_filename = @photo.name.original_filename.tr!(' ', '_')
+      if upload(@photo.name, original_filename)
         @photo.name = @photo.name.original_filename
         @photo.save!
       end
@@ -22,9 +23,9 @@ class PhotosController < ApplicationController
   end
 
 private
-  def upload(file)
+  def upload(file, original_filename)
     directory = "public/images/"
-    path=Rails.root.join(directory, file.original_filename)
+    path=Rails.root.join(directory, original_filename)
     File.open(path.to_s, "wb") {|f| f.write file.read }
   end
 
