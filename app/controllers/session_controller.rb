@@ -48,7 +48,7 @@ class SessionController < ApplicationController
       @title = @header = "Take Away - Preview"
       @customer ||= current_user
     else
-      redirect_to :controller=>:customer, :action=>:signin
+      redirect_to signin_path
     end
   end
 
