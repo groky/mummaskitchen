@@ -12,6 +12,7 @@ class CustomerController < ApplicationController
       if @customer.nil?
         @customer = Customer.new(params[:customer])
         @customer.save
+        signin(@customer)
         redirect_to :controller=>:session, :action=>:takeaway if has_orders?
       end
     end
