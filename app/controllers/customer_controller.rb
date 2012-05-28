@@ -15,7 +15,7 @@ class CustomerController < ApplicationController
       end
     end
  
-    #manage_orders(@customer) if has_orders?
+    redirect_to :controller=>:session, :action=>:takeaway if has_orders?
   end
 
   def order
