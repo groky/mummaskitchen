@@ -48,7 +48,7 @@ class SessionController < ApplicationController
       @title = @header = "Take Away - Preview"
       @customer ||= current_user
     else
-      redirect_to signin_path
+      redirect_to register_path
     end
   end
 
