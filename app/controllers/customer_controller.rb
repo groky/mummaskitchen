@@ -85,10 +85,12 @@ class CustomerController < ApplicationController
         order_item.price_id = o[:id]
         order_item.quantity = o[:quantity]
         
-        defrosts.select do |key, hash|
+        if !defrosts.nil?
+          defrosts.select do |key, hash|
           #puts "THE KEY IS #{key}\n"
-          if key.to_i == price.id
-            order_item.thaw = (hash=='on' ? true : false)
+            if key.to_i == price.id
+              order_item.thaw = (hash=='on' ? true : false)
+            end
           end
         end
         
