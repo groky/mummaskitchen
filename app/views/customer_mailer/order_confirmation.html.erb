@@ -49,10 +49,12 @@
 			<td><%=item.quantity%> X <%=Price.sizew(item.id)%></td>
 			<td>$<%=currency(item.price)%> ea</td>
 			<td>
+				<%if !@defrosts.nil? %>
 				<%@defrosts.select do |key, val|%>
 					<%if key.to_i==item.id%>
 						<%=val=='on'? "defrost" : ""%>
 					<%end%>	
+				<%end%>
 				<%end%>
 			</td>
 			<%total+= (item.price * item.quantity)%>
