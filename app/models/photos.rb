@@ -1,5 +1,4 @@
 class Photos < ActiveRecord::Base
-  belongs_to :dish
   
   def self.displayimages(menu_id)
     Photos.find(:all, 
