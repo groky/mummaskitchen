@@ -1,5 +1,7 @@
 class Photos < ActiveRecord::Base
   
+  unloadable
+  
   def self.displayimages(menu_id)
     Photos.find(:all, 
                 :select=>"DISTINCT \"photos\".* ", 
