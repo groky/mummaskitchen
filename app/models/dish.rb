@@ -2,6 +2,7 @@ class Dish < ActiveRecord::Base
   belongs_to :menu
   belongs_to :customerorder
   has_many :prices
+  has_many :photos
   
   # todo - this is not DRY
   def prices(id, where)

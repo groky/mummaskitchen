@@ -1,5 +1,6 @@
 class Photos < ActiveRecord::Base
   
+  belongs_to :dish
   unloadable
   
   def self.displayimages(menu_id)
